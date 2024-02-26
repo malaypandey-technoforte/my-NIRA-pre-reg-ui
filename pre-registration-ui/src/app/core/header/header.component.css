@@ -14,21 +14,26 @@
 .mat-toolbar {
   top: 0;
   position: fixed;
+  color:darkred;
   z-index: 999;
-  background-color: #0b6a82;
+  background-color: #050505;
   border-color: #707070;
   border-width: 1px;
   overflow-x: hidden;
   width: 100%;
   height: 68px;
   padding: 0px 2vw;
+  cursor:move;
+  
+
 }
 
 .header--logo {
   vertical-align: middle;
   cursor: pointer;
   /* UX enhancement */
-  padding-left: 4%;
+  padding-left: 20%;
+  
   /* UX enhancement end */
 }
 

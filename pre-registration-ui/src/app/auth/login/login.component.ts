@@ -11,6 +11,8 @@ import * as appConstants from "../../app.constants";
 import Utils from "src/app/app.util";
 import moment from "moment";
 import stubConfig from "../../../assets/stub-config.json";
+const CAPTCHA_SITE_KEY = "6LdRhREpAAAAAKT09lQ5Rr1GMIs5GECxnoaLhnjs";
+const CATCHA_SECRET_KEY = "6LdRhREpAAAAAJ6j5sODKhOJTG3clMKvpzL4IF-2";
 
 @Component({
   selector: "app-login",
@@ -274,10 +276,17 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // loadRecaptchaSiteKey() {
+  //   this.siteKey = this.configService.getConfigByKey(
+  //     "mosip.preregistration.captcha.sitekey"
+  //   );
+  // }
   loadRecaptchaSiteKey() {
-    this.siteKey = this.configService.getConfigByKey(
+    /*this.siteKey = this.configService.getConfigByKey(
       "mosip.preregistration.captcha.sitekey"
-    );
+    );*/
+
+    this.siteKey = CAPTCHA_SITE_KEY;
   }
 
   loadValidationMessages() {
@@ -431,10 +440,10 @@ export class LoginComponent implements OnInit {
     ) {
       this.loadingMessage = this.validationMessages["loading"];
       this.dataService
-        .sendOtpWithCaptcha(
+        .sendOtp(
           this.inputContactDetails,
           this.userPreferredLanguage,
-          this.captchaToken
+          //this.captchaToken
         )
         .subscribe(
           (response) => {

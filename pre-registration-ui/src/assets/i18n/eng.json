@@ -269,7 +269,7 @@
     ]
   },
   "header": {
-    "link_about": "GETTING STARTED",
+    "link_about": "NATIONAL ID REGISTRATION GUIDE",
     "link_faq": "FAQ",
     "link_contact": "CONTACT",
     "link_applications": "Your Applications",
@@ -277,9 +277,9 @@
     "link_login": "LOGIN"
   },
   "login": {
-    "text": "Quick & Easy steps",
-    "sub_text": "Pre-register for",
-    "sub_text_UID": "Unique Identification Number",
+    "text": "Ndagamuntu/National ID",
+    "sub_text": "Online Bio data",
+    "sub_text_UID": "registeration",
     "label_email_num": "Email ID or Phone Number",
     "label_otp": "Enter OTP",
     "action_send": "Send OTP",
