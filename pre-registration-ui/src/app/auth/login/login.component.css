@@ -27,16 +27,22 @@
 
 .form_wrapper {
   background-color: hsl(316, 37%, 92%);
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(14, 12, 12);
-  padding: 5px 5px;
-  border: none;
+  padding: 40px; /* Increased padding */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  line-height: 2rem;
-  height: 50vh;
-  margin: 10% -70% 1% 0;
-
+  line-height: 1.6;
+  height: 60vh; /* Adjusted height */
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  max-width: 500px; /* Increased maximum width */
 }
+
+
+
+
 
 .form_fields_padding {
   margin: 5px auto;
