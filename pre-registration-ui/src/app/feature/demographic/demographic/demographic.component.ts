@@ -80,6 +80,25 @@ export class DemographicComponent
   ltrLangs = this.configService
     .getConfigByKey(appConstants.CONFIG_KEYS.mosip_left_to_right_orientation)
     .split(",");
+
+
+    expStep = 0;
+
+    setStep(index: number) {
+      this.expStep = index;
+    }
+  
+    nextStep() {
+      this.expStep++;
+    }
+  
+    prevStep() {
+      this.expStep--;
+    }
+
+    
+
+
   agePattern: string;
   defaultDay: string;
   defaultMonth: string;
