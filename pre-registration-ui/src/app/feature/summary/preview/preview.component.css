@@ -67,9 +67,9 @@ header {
 .preview__header-container hr {
   left: 0;
   width: 100%;
-  border: 1px solid #ff4081;
+  border: 1px solid rgb(96, 2, 136);
   height: 1px;
-  color: #ff4081;
+  color: rgb(96, 2, 136);
 }
 
 .preview__header hr {
@@ -110,7 +110,7 @@ header {
   padding: 20px 0rem;
   border-bottom: 2px dotted #e6e6e6;
   font-weight: 600;
-  color: #ff4081;
+  color: rgb(96, 2, 136);
 }
 
 .preview__footer-container {

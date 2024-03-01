@@ -1871,10 +1871,30 @@ export class DemographicComponent
     this.dataUploadComplete = true;
     let url = "";
     if (localStorage.getItem(appConstants.MODIFY_USER_FROM_PREVIEW) === "true" && this.preRegId) {
-      url = Utils.getURL(this.router.url, "summary");
+     /* url = Utils.getURL(this.router.url, "summary");
       localStorage.setItem(appConstants.MODIFY_USER_FROM_PREVIEW, "false");
-      this.router.navigateByUrl(url + `/${this.preRegId}/preview`);
-    } else {
+      this.router.navigateByUrl(url + `/${this.preRegId}/preview`);*/
+     // modify open dialog
+     const message = "You have successfuly modified registration details";
+     const body = {
+       case: "MESSAGE",
+       textDir: this.userPrefLanguageDir,
+       message: message
+     };
+     
+     this.dialog
+       .open(DialougComponent, { width: "400px", data: body, disableClose: true })
+       .beforeClosed()
+       .subscribe((res) => {
+         if (res === true) {
+           url = Utils.getURL(this.router.url, "summary");
+           localStorage.setItem(appConstants.MODIFY_USER_FROM_PREVIEW, "false");
+           this.router.navigateByUrl(url + `/${this.preRegId}/preview`);
+         }
+       });
+
+     
+   }else {
       url = Utils.getURL(this.router.url, "file-upload");
       localStorage.removeItem(appConstants.NEW_APPLICANT_FROM_PREVIEW);
       this.router.navigate([url, this.preRegId]);
@@ -2196,7 +2216,9 @@ export class DemographicComponent
       });
     });
   }
+  modifyopenDialog() {
 
+  }
   openDialog(data, width, height?, panelClass?) {
     const dialogRef = this.dialog.open(DialougComponent, {
       width: width,
