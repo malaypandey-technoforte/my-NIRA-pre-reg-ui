@@ -122,7 +122,7 @@ mat-select:focus {
 .user header {
   margin: 0;
   font-weight: bold;
-  color: #fd518c;
+  color: rgb(96, 2, 136);
 }
 
 .user hr {
@@ -326,7 +326,7 @@ mat-select:focus {
   color: white;
   min-height: 40px;
   padding: 10px;
-  background-color:rgb(11, 106, 130) ;
+  background-color:rgb(96, 2, 136);
 }
 .fieldContent {
   padding: 10px;

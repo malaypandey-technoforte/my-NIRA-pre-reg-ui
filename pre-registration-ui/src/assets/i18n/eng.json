@@ -211,12 +211,8 @@
         "answer": "Create a new account using a new mobile number or email ID."
       },
       {
-        "question": "What happens when I select the specific language on the login screen?",
-        "answer": "Select the language that you can easily read and write because the entire form will be displayed in the specific language you have chosen."
-      },
-      {
         "question": "What if I do not have the required document(s) available while filling the pre-registration application?",
-        "answer": "Fill the demographic data and save the application. You can upload the documents later."
+        "answer": "Fill the demographic data and save the application. You will upload the documents later when Biometrics are being Captured."
       },
       {
         "question": "Can I only book an appointment for only two people out of five applicants in the pre-registration application?",
@@ -231,7 +227,7 @@
         "answer": "Yes. If your appointment has expired, you can book a new appointment with a future date."
       },
       {
-        "question": "I have booked an appointment at Casablanca registration center. Can I change my appointment registration center to Rabat?",
+        "question": "I have booked an appointment at Kampala Central registration center. Can I change my appointment registration center to Mukono Registartion Center?",
         "answer": "No, but you can cancel the current appointment and book a new appointment at a new location of your choice."
       },
       {
@@ -248,15 +244,15 @@
       },
       {
         "question": "I am staying away from my permanent residence for two years. What proof of residence do I have to provide?",
-        "answer": "GoM to decide suitability of question and answers"
+        "answer": "You will need LC recomendation letter to proove your area of residence"
       },
       {
         "question": "I do not have proof of residence for my present address. What should I do?",
-        "answer": "GoM to decide suitability of question and answers."
+        "answer": "You may continue Pre registration process and letter, prepare a recomendation Letter from LC and then Present it on the day when biometrics will be uploaded."
       },
       {
         "question": "I do not have any documents. What should I do?",
-        "answer": "GoM to decide suitability of question and answers."
+        "answer": "Prepare all the required documents depending on your type of Citzeship befor apearing for Biometric Capture."
       },
       {
         "question": "How many days before can I cancel or re-book an appointment?",
@@ -264,7 +260,7 @@
       },
       {
         "question": "Do I have to carry original documents or certified document copies when I visit registration center?",
-        "answer": "GoM to decide suitability of question and answers."
+        "answer": "You need to carry all the Necesary documents that prooves your Citizenship or Residential status."
       }
     ]
   },
@@ -277,9 +273,9 @@
     "link_login": "LOGIN"
   },
   "login": {
-    "text": "Ndagamuntu/National ID",
-    "sub_text": "Online Bio data",
-    "sub_text_UID": "registeration",
+    "text": "Uganda National ID",
+    "sub_text": "Pre Registeration",
+    "sub_text_UID": "Client",
     "label_email_num": "Email ID or Phone Number",
     "label_otp": "Enter OTP",
     "action_send": "Send OTP",
@@ -352,7 +348,7 @@
     }
   },
   "documents": {
-    "title_document": "Upload Documents",
+    "title_document": "Upload Documents For Proof",
     "text_filetype": "Allowed file type ",
     "text_filesize": "and allowed file size",
     "action_browse": "BROWSE",
@@ -369,9 +365,9 @@
   },
   "acknowledgement": {
     "title": "Appointment Confirmed",
-    "message": "The Pre-Registration id and Appointment details have been sent to the registered email id and phone number",
+    "message": "The Registration Number and Appointment details have been sent to the registered email id and phone number",
     "label_name": "Name",
-    "label_pre_id": "Pre Registration ID",
+    "label_pre_id": "Registration Number",
     "label_reg_cntr": "Center Name",
     "label_cntr_contact_number": "Center Contact Number",
     "label_appointment_date_time": "Appointment Date & Time",
@@ -382,7 +378,7 @@
     "label_reg_cntr_dtl": "Center Address"
   },
   "preview": {
-    "title_preview": "Preview",
+    "title_preview": "Applicant Details",
     "language": "English",
     "subheading_information": "Personal Information",
     "label_name": "Full Name",
@@ -455,7 +451,7 @@
     "action_modify_appointment": "Book/Modify Appointment",
     "action_cre_application": "Create New Application ",
     "card": {
-      "text_app_id": "Application ID",
+      "text_app_id": "Registration Number",
       "text_name": "Name",
       "text_appoinment_date": "Appointment Date",
       "text_status": "Status",

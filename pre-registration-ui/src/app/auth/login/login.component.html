@@ -4,8 +4,16 @@
 
 <div  *ngIf="!showSpinner" class="wrapper" [dir]="dir">
   <div  class="form_wrapper">
+    
     <div class="heading">
-      <span>{{ "login.text" | translate }}</span>
+      <div class="loginlogo">
+        
+        
+          <!-- Your other form content goes here -->
+          <img src="../../../assets/logo-final.png">
+        
+      </div>
+      <span><b>{{ "login.text" | translate }}</b></span>
     </div>
 
     <div class="subHeading pinkText">
