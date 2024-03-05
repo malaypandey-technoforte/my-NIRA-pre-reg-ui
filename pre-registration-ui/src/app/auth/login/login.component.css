@@ -35,12 +35,15 @@
   line-height: 1.6;
   height: 150;
   position: fixed;
-  bottom: 200px;
+  bottom: 120px;
   right: 50px;
   max-width: 500px;
 align-items: center;
-  padding-top: 0%;
+
 }
+
+
+
 .loginlogo img {
   max-width: 50%; /* Ensure the image does not exceed the container width */
   height: auto; /* Maintain the aspect ratio */
