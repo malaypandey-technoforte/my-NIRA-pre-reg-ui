@@ -29,7 +29,7 @@
   background-color: rgba(242, 242, 242, 0.8);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgb(14, 12, 12);
-  padding: 40px 40px 40px 40px;
+  padding: 80px 40px 40px 40px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   line-height: 1.6;
@@ -38,11 +38,8 @@
   bottom: 120px;
   right: 50px;
   max-width: 500px;
-align-items: center;
-
+  align-items: center;
 }
-
-
 
 .loginlogo img {
   max-width: 50%; /* Ensure the image does not exceed the container width */
