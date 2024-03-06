@@ -385,10 +385,10 @@ mat-icon {
 }
 .fieldHeader {
   width: 400px;
-  color: white;
+  color: rgb(8, 8, 8);
   min-height: 40px;
   padding: 10px;
-  background-color: rgb(96, 2, 136);
+  background-color: #c7c9cb;
 }
 .fieldContent {
   padding: 10px;
@@ -416,4 +416,24 @@ mat-icon {
 
 .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
   margin-left: 8px;
+}
+/* Line with black color */
+.line-black {
+  width: 100%;
+  height: 15px;
+  background-color: #000;
+}
+
+/* Line with yellow color */
+.line-yellow {
+  width: 100%;
+  height: 15px;
+  background-color: #ff0; /* Yellow color code */
+}
+
+/* Line with red color */
+.line-red {
+  width: 100%;
+  height: 15px;
+  background-color: #f00; /* Red color code */
 }
