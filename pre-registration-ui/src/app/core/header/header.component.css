@@ -34,7 +34,6 @@
   cursor: pointer;
   /* UX enhancement */
   padding-left: 20%;
-
   /* UX enhancement end */
 }
 
@@ -45,7 +44,7 @@
   color: #100c0c !important;
   font-size: 12px !important;
   line-height: 1.42857143 !important;
-  text-decoration: none;
+  text-decoration: solid;
   text-transform: uppercase;
   font-family: Helvetica;
   font-weight: 200;

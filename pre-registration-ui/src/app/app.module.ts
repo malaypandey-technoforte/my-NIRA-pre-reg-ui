@@ -32,7 +32,9 @@ const appInitialization = (appConfig: AppConfigService) => {
     AuthModule,
     SharedModule,
     NgxPrintModule,
-    MatExpansionModule
+    MatExpansionModule,
+    
+    
   ],
   providers: [
     BookingService,
