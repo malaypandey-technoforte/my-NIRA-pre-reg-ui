@@ -30,3 +30,5 @@ test.txt
 **/*.iml
 .vscode
 authentication-demo-ui/keys/
+pre-registration-ui/src/app/auth/login/login.component.ts
+pre-registration-ui/src/app/auth/login/login.component.ts
