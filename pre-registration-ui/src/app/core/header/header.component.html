@@ -7,10 +7,10 @@
       <a *ngIf="!authService.isAuthenticated()" href="./" mat-list-item> {{ 'header.link_login' | translate }}</a>
       <a mat-list-item *ngIf="authService.isAuthenticated()" (click)="onHome(); sidenav.toggle()">{{
         'header.link_applications' | translate
-      }}</a>
+        }}</a>
       <a mat-list-item *ngIf="authService.isAuthenticated()" (click)="doLogout(); sidenav.toggle()">{{
         'header.link_logout' | translate
-      }}</a>
+        }}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -38,8 +38,7 @@
       </mat-nav-list>
       <mat-nav-list *ngIf="authService.isAuthenticated()" class="list-item">
         <a mat-list-item class="header__actions" (click)="onHome()">
-          <mat-icon class="icon">folder_open</mat-icon>&nbsp;{{ 'header.link_applications' | translate }}</a
-        >
+          <mat-icon class="icon">folder_open</mat-icon>&nbsp;{{ 'header.link_applications' | translate }}</a>
         <a mat-list-item class="header__actions" (click)="doLogout()">
           <mat-icon class="icon">power_settings_new</mat-icon>&nbsp;{{ 'header.link_logout' | translate }}
         </a>

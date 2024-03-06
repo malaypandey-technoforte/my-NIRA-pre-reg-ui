@@ -1,10 +1,9 @@
 .mat-sidenav-container {
   height: 100%;
   background: white;
-  color: rgb(217, 196, 196);            /* Default text color */
-  text-decoration: none;   /* Remove default underline */
-  transition: color 0.3s;   /* Add a smooth transition effect on color change */
-  
+  color: rgb(217, 196, 196); /* Default text color */
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s; /* Add a smooth transition effect on color change */
 }
 .mat-sidenav {
   width: 180px;
@@ -19,7 +18,7 @@
   position: fixed;
   color: darkred;
   z-index: 999;
-  background-color:rgb(238, 236, 236);
+  background-color: #050505;
   border-color: #707070;
   border-width: 1px;
   overflow-x: hidden;
@@ -27,6 +26,7 @@
   height: 68px;
   padding: 0px 2vw;
   cursor: move;
+  padding-bottom: 20px;
 }
 
 .header--logo {
@@ -34,8 +34,6 @@
   cursor: pointer;
   /* UX enhancement */
   padding-left: 20%;
-  width: 150px; 
-  height: 100px;
   
   /* UX enhancement end */
 }
@@ -44,13 +42,7 @@
   flex: 1 1 auto;
 }
 .list-item > .mat-list-item {
-  background-color: #a70404; /* change to your desired color */
-  color: #f4f4f3 !important;
-  border:rgb(9, 9, 245);
-  border-radius: 0px;
-  padding: 5px 20px;
-  font-size: 26px;
-  position:relative;
+  color: #fff !important;
   font-size: 12px !important;
   line-height: 1.42857143 !important;
   text-decoration:solid;
@@ -58,31 +50,22 @@
   font-family: Helvetica;
   font-weight: 200;
 }
-.list-item > .mat-list-item:hover {
-  transform: scale(1); /* You can adjust the scale value based on your preference */
-  background-color: #d9b112; /* Change to a different color on hover */
-  color: #a70404;
-  cursor: pointer; /* Change cursor on hover, e.g., to a pointer */
-}
 .list-item {
   display: inline-flex;
   padding: 0px;
   margin-left: 25px;
 }
 .icon {
-  color: #fff !important;
+  color: #0f0606 !important;
 }
 .sidenav-list > .mat-list-item {
-  color: rgb(188, 173, 173);
+  color: rgb(25, 23, 23);
   text-transform: uppercase;
   font-size: 12px !important;
   line-height: 1.42857143 !important;
   letter-spacing: 2px;
   font-family: Arial, Helvetica, sans-serif;
   transition: color 0.3s; /* Add a smooth transition effect on color change */
-  
-
-  
 }
 
 .sidenav-list > .mat-list-item:hover {
@@ -92,7 +75,6 @@
 .sidenav-list > .mat-list-item:hover.router-link-active {
   color: red; /* Change color to red when hovered and active (visited) */
 }
-
 
 .header__actions {
   text-transform: none !important;
