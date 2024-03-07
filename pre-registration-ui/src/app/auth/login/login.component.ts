@@ -280,9 +280,14 @@ export class LoginComponent implements OnInit {
   //   this.siteKey = this.configService.getConfigByKey(
   //     "mosip.preregistration.captcha.sitekey"
   //   );
-
-  //   // this.siteKey = CAPTCHA_SITE_KEY;
   // }
+  loadRecaptchaSiteKey() {
+   // this.siteKey = this.configService.getConfigByKey(
+      "mosip.preregistration.captcha.sitekey"
+  //  );
+
+     this.siteKey = CAPTCHA_SITE_KEY;
+  }
 
   loadValidationMessages() {
     this.dataService
