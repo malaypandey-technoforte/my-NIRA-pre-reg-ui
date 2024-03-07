@@ -1,7 +1,7 @@
 .mat-sidenav-container {
   height: 100%;
-  background: white;
-  color: rgb(217, 196, 196); /* Default text color */
+  background: rgb(15, 11, 11);
+  color: rgb(17, 9, 9); /* Default text color */
   text-decoration: none; /* Remove default underline */
   transition: color 0.3s; /* Add a smooth transition effect on color change */
 }
@@ -18,7 +18,7 @@
   position: fixed;
   color: darkred;
   z-index: 999;
-  background-color: #050505;
+  background-color: #f6f6f8;
   border-color: #707070;
   border-width: 1px;
   overflow-x: hidden;
@@ -34,7 +34,6 @@
   cursor: pointer;
   /* UX enhancement */
   padding-left: 20%;
-  
   /* UX enhancement end */
 }
 
@@ -42,13 +41,21 @@
   flex: 1 1 auto;
 }
 .list-item > .mat-list-item {
-  color: #fff !important;
+  color: #000000 !important;
   font-size: 12px !important;
   line-height: 1.42857143 !important;
-  text-decoration:solid;
-  text-transform: uppercase; 
+  text-decoration: solid;
+  text-transform: uppercase;
   font-family: Helvetica;
   font-weight: 200;
+}
+.list-item > .mat-list-item:hover {
+  transform: scale(
+    1
+  ); /* You can adjust the scale value based on your preference */
+  background-color: #e3acb3; /* Change to a different color on hover */
+  color: #a70404;
+  cursor: pointer; /* Change cursor on hover, e.g., to a pointer */
 }
 .list-item {
   display: inline-flex;
@@ -69,7 +76,7 @@
 }
 
 .sidenav-list > .mat-list-item:hover {
-  color: black; /* Default color for all links */
+  color: red; /* Default color for all links */
 }
 
 .sidenav-list > .mat-list-item:hover.router-link-active {
