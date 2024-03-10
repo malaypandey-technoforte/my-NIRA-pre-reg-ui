@@ -27,7 +27,7 @@
 
 .form_wrapper {
   background-color: rgba(242, 242, 242, 0.8);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
   color: rgb(14, 12, 12);
   padding: 40px 40px 40px 40px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -79,7 +79,7 @@ mat-form-field {
 }
 
 .pinkBg {
-  background-color: #fe528d;
+  background-color: #c02533;
 }
 .whiteText {
   color: white;
@@ -90,7 +90,7 @@ mat-form-field {
 }
 
 .pinkText {
-  color: #fe528d;
+  color: #c02533;
 }
 
 button {

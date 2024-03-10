@@ -7,6 +7,7 @@ import { DialougComponent } from "src/app/shared/dialoug/dialoug.component";
 import { Subscription } from "rxjs";
 import { DataStorageService } from "../services/data-storage.service";
 
+
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
