@@ -182,7 +182,11 @@ export class CenterSelectionComponent
         obj.controlType !== null &&
         !(obj.controlType === "fileupload")
       ) {
-        if (obj.locationHierarchyLevel && this.recommendedCenterLocCode == obj.locationHierarchyLevel) {
+        if (obj.locationHierarchyLevel && this.recommendedCenterLocCode == obj.locationHierarchyLevel 
+          && obj.id == "applicantPlaceOfResidenceDistrict") { 
+            /* instead of actual name of the field. lets use a property called {"group":"placeOfResidence"} 
+              for the condition. to allow for extensibility
+            */
           uiFieldName = obj.id;
         }
       }
