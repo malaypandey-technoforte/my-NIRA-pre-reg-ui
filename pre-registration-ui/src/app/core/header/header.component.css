@@ -17,7 +17,7 @@
   top: 0;
   position: fixed;
   z-index: 999;
-  background-color: #f0e7e7;
+  background-color: #F5F5F5;
   border-color: #707070;
   border-width: 1px;
   overflow-x: hidden;
@@ -43,7 +43,7 @@
   line-height: 1.42857143 !important;
   text-decoration: solid;
   text-transform: uppercase;
-  font-family: Helvetica;
+  font-family: 'OpenSans';
   font-weight: 200;
 }
 .list-item > a:hover { /* You can adjust the scale value based on your preference */
@@ -56,16 +56,14 @@
   padding: 20px;
   margin-left: 25px;
 }
-.icon {
-  color: #0f0606 !important;
-}
+
 .sidenav-list > .mat-list-item {
   color: rgb(25, 23, 23);
   text-transform: uppercase;
   font-size: 12px !important;
   line-height: 1.42857143 !important;
   letter-spacing: 2px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'OpenSans', Helvetica, sans-serif;
   transition: color 0.3s; /* Add a smooth transition effect on color change */
 }
 

@@ -2,7 +2,7 @@
   "quick_guide": {
     "breadcrumb": {
       "home": "Home",
-      "getting_started": "Getting Started"
+      "getting_started": "How to Preregister"
     },
     "headerText": {
       "line1": "To pre-register for one or more applicants, fill out the demographic details and upload the required documents. To book an appointment, choose your preferred registration center, date and time. On successful pre-registration, you will receive the notification on your provided email id or phone number.",
@@ -198,7 +198,7 @@
   "faq": {
     "breadcrumb": {
       "home": "Home",
-      "getting_started": "FAQ"
+      "getting_started": "Frequently Asked Questions"
     },
     "answer": "Answer",
     "questions": [
@@ -265,18 +265,18 @@
     ]
   },
   "header": {
-    "link_about": "HOW TO REGISTER",
-    "link_faq": "FAQ",
+    "link_about": "HOW TO PRE-REGISTER",
+    "link_faq": "FAQs",
     "link_contact": "CONTACT",
     "link_applications": "Your Applications",
     "link_logout": "Logout",
     "link_login": "LOGIN"
   },
   "login": {
-    "text": "Uganda National ID",
-    "sub_text": "Pre Registeration",
-    "sub_text_UID": "Client",
-    "label_email_num": "Email ID or Phone Number",
+    "text": "Uganda National ID Application",
+    "sub_text": "Pre-Registration",
+    "sub_text_UID": "Portal",
+    "label_email_num": "Enter your Email Address or Phone Number",
     "label_otp": "Enter OTP",
     "action_send": "Send OTP",
     "action_resend": "Resend",
@@ -365,9 +365,9 @@
   },
   "acknowledgement": {
     "title": "Appointment Confirmed",
-    "message": "The Registration Number and Appointment details have been sent to the registered email id and phone number",
+    "message": "The Application ID and Appointment details have been sent to the registered email id and phone number",
     "label_name": "Name",
-    "label_pre_id": "Registration Number",
+    "label_pre_id": "Application ID",
     "label_reg_cntr": "Center Name",
     "label_cntr_contact_number": "Center Contact Number",
     "label_appointment_date_time": "Appointment Date & Time",
@@ -448,10 +448,10 @@
   "dashboard": {
     "title": "Your Applications",
     "action_modify_information": "Modify Information",
-    "action_modify_appointment": "Book/Modify Appointment",
+    "action_modify_appointment": "Book / Modify Appointment",
     "action_cre_application": "Create New Application ",
     "card": {
-      "text_app_id": "Registration Number",
+      "text_app_id": "Application ID",
       "text_name": "Name",
       "text_appoinment_date": "Appointment Date",
       "text_status": "Status",

@@ -21,7 +21,7 @@
       <span>{{ previewLabels.title_preview }}&nbsp;(<span
           *ngFor="let dataCaptureLang of dataCaptureLanguagesLabels;index as labelsIndex">
           <span [dir]="userPrefLanguageDir">&nbsp;{{dataCaptureLang}}&nbsp;</span>
-        </span>)</span> &nbsp;&nbsp;&nbsp;&nbsp;<span>Your Pre Registration Number is&nbsp;{{preRegId}}</span>
+        </span>)</span> &nbsp;&nbsp;-&nbsp;&nbsp;<span>Your Application ID is&nbsp;{{preRegId}}</span>
       <span [ngStyle]="userPrefLanguageDir == 'ltr'? {'float': 'right'} : {'float': 'left'}">
         <span *ngIf="!readOnlyMode" (click)="modifyDemographic()" class="preview__modify-file"
           matTooltip="{{ helpText.modify_at_DemoPreview }}"><img src="assets/edit.png" /> {{
