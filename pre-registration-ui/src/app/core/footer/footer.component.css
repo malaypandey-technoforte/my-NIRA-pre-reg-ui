@@ -1,7 +1,7 @@
 .main-footer {
   display: flex;
   justify-content: center;
-  color:aliceblue;
+  color: rgb(12, 14, 16);
   font-family: Roboto;
   font-size: 12px;
   padding-top: 10px;
@@ -11,14 +11,13 @@
   width: 100%;
   z-index: -1;
   margin-bottom: 2px;
-  background: rgb(15, 14, 14);
+  background-color: #f7f7f8;
 }
 
-.version-txt{
+.version-txt {
   font-size: 8px;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   display: block;
   justify-content: center;
-  
 }

@@ -110,9 +110,9 @@ mat-select:focus {
 
 .user {
   overflow-x: hidden;
-  background-color:  #ffffff;
+  background-color: #ffffff;
   margin: auto;
-  padding: 1rem 2rem 0 2rem; 
+  padding: 1rem 2rem 0 2rem;
   padding-top: 1rem;
   /* border-bottom: 1px solid lightgray; */
   width: 100%;
@@ -122,7 +122,7 @@ mat-select:focus {
 .user header {
   margin: 0;
   font-weight: bold;
-  color: #fd518c;
+  color: #e35a6d;
 }
 
 .user hr {
@@ -176,7 +176,6 @@ mat-select:focus {
 .file-upload__body__document-type {
   padding: 10px 15px;
   min-height: 100px;
-
 }
 
 .file-upload__body__document-name {
@@ -241,7 +240,8 @@ mat-select:focus {
   background: #ffffff;
   box-shadow: 10px 10px 10px 3px #808080;
   z-index: 22;
-  padding: 0 2vw;}
+  padding: 0 2vw;
+}
 
 .file-upload__input,
 .file-upload__or {
@@ -304,8 +304,8 @@ mat-select:focus {
   padding: 5px !important;
 }
 .mat-select-value {
-   padding: 5px !important;
-   line-height: 23px !important;
+  padding: 5px !important;
+  line-height: 23px !important;
 }
 
 .spinner {
@@ -313,7 +313,6 @@ mat-select:focus {
   align-items: center;
   margin-top: 18vw;
   display: flex;
-
 }
 .fieldContainer {
   flex: 1;
@@ -326,12 +325,12 @@ mat-select:focus {
   color: white;
   min-height: 40px;
   padding: 10px;
-  background-color:rgb(11, 106, 130) ;
+  background-color: #e35a6d;
 }
 .fieldContent {
   padding: 10px;
   max-width: 500px;
-  box-shadow: 1px 1px 1px 1px #ccc;  /*Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5*/
+  box-shadow: 1px 1px 1px 1px #ccc; /*Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5*/
 }
 ::ng-deep .mat-form-field .mat-form-field-label {
   padding-top: 3px;

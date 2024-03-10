@@ -282,11 +282,11 @@ export class LoginComponent implements OnInit {
   //   );
   // }
   loadRecaptchaSiteKey() {
-    /*this.siteKey = this.configService.getConfigByKey(
+   // this.siteKey = this.configService.getConfigByKey(
       "mosip.preregistration.captcha.sitekey"
-    );*/
+  //  );
 
-    this.siteKey = CAPTCHA_SITE_KEY;
+     this.siteKey = CAPTCHA_SITE_KEY;
   }
 
   loadValidationMessages() {

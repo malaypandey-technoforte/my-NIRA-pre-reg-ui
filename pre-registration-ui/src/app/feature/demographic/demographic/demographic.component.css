@@ -22,7 +22,7 @@
 
 .wrapper {
   box-shadow: 1px 1px 10px 4px #eeeeee;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   overflow-x: hidden;
   /* margin: 0px 2vw; */
   margin: 5px 2vw;
@@ -32,7 +32,7 @@
 }
 
 .user {
-  background-color:  #ffffff;
+  background-color: #ffffff;
   margin: auto;
   padding: 1rem 2rem 0 2rem;
   padding-top: 1rem;
@@ -44,7 +44,7 @@
 .user header {
   margin: 0;
   font-weight: bold;
-  color: #fd518c;
+  color: rgb(231, 222, 235);
 }
 
 .readOnly {
@@ -109,7 +109,7 @@
 }
 .user__container h6 {
   font-weight: bold;
-  color: #2f3033;
+  color: #b3b9cb;
 }
 
 .user__form[_ngcontent-c17] {
@@ -318,7 +318,7 @@ mat-icon {
   .mat-form-field-outline-thick {
   color: lightgrey;
   border-bottom: 2px solid #22a8c9;
-} 
+}
 
 .required-annotation {
   color: white;
@@ -410,12 +410,15 @@ mat-icon {
   color: white;
   min-height: 40px;
   padding: 10px;
-  background-color:rgb(11, 106, 130) ;
+  background-color: #e35a6d;
 }
+/*  #e35a6d
+} */
+
 .fieldContent {
   padding: 10px;
   width: 400px;
-  box-shadow: 1px 1px 1px 1px #ccc;  /*Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5*/
+  box-shadow: 1px 1px 1px 1px #ccc; /*Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5*/
 }
 .selectedOption {
   margin: 10px;
@@ -430,8 +433,6 @@ mat-icon {
 /* ::ng-deep.mat-input-element {
   height: 20px;
 } */
-
-
 
 .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
