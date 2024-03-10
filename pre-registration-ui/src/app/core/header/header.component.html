@@ -1,3 +1,4 @@
+
 <mat-sidenav-container [dir]="textDirection()">
   <mat-sidenav #sidenav role="navigation" position="start" mode="push">
     <mat-nav-list class="sidenav-list">
@@ -19,12 +20,12 @@
         <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
       </div>
       <a *ngIf="!authService.isAuthenticated()" href="./" mat-list-item>
-        <img src="assets\logo-final.png" class="header--logo" style="max-height: 40px"/>
-       
+        <img src="assets\logo-final.png" class="header--logo" style="max-height: 40px" />
+
       </a>
       <a *ngIf="authService.isAuthenticated()" (click)="onLogoClick()" mat-list-item>
-        <img src="assets\nira logo.jpg" class="header--logo" style="max-height: 40px"/>
-     
+        <img src="assets\logo-final.png" class="header--logo" style="max-height: 40px" />
+
       </a>
       <!-- <div style="margin-left:5px;"><a routerLink="/" class="logo">logo</a></div> -->
       <mat-nav-list class="list-item">

@@ -30,3 +30,4 @@ test.txt
 **/*.iml
 .vscode
 authentication-demo-ui/keys/
+pre-registration-ui/src/assets/uispectest.json

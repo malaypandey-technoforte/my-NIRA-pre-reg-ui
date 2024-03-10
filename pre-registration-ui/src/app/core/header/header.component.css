@@ -1,7 +1,7 @@
 .mat-sidenav-container {
   height: 100%;
   background: white;
-  color: rgb(217, 196, 196); /* Default text color */
+  color: rgb(17, 9, 9); /* Default text color */
   text-decoration: none; /* Remove default underline */
   transition: color 0.3s; /* Add a smooth transition effect on color change */
 }
@@ -16,17 +16,14 @@
 .mat-toolbar {
   top: 0;
   position: fixed;
-  color: darkred;
   z-index: 999;
-  background-color: #050505;
+  background-color: #f0e7e7;
   border-color: #707070;
   border-width: 1px;
   overflow-x: hidden;
   width: 100%;
   height: 68px;
   padding: 0px 2vw;
-  cursor: move;
-  padding-bottom: 20px;
 }
 
 .header--logo {
@@ -34,7 +31,6 @@
   cursor: pointer;
   /* UX enhancement */
   padding-left: 20%;
-  
   /* UX enhancement end */
 }
 
@@ -42,17 +38,22 @@
   flex: 1 1 auto;
 }
 .list-item > .mat-list-item {
-  color: #fff !important;
+  color: #000000;
   font-size: 12px !important;
   line-height: 1.42857143 !important;
-  text-decoration:solid;
-  text-transform: uppercase; 
+  text-decoration: solid;
+  text-transform: uppercase;
   font-family: Helvetica;
   font-weight: 200;
 }
+.list-item > a:hover { /* You can adjust the scale value based on your preference */
+  background-color: #c02533; /* Change to a different color on hover #e3acb3 */
+  color: #ffffff;
+  cursor: pointer; /* Change cursor on hover, e.g., to a pointer */
+}
 .list-item {
   display: inline-flex;
-  padding: 0px;
+  padding: 20px;
   margin-left: 25px;
 }
 .icon {
@@ -69,11 +70,14 @@
 }
 
 .sidenav-list > .mat-list-item:hover {
-  color: black; /* Default color for all links */
+  background-color: #c02533; /* Change to a different color on hover #e3acb3 */
+  color: #ffffff; /* Default color for all links */
 }
 
 .sidenav-list > .mat-list-item:hover.router-link-active {
-  color: red; /* Change color to red when hovered and active (visited) */
+  background-color: #c02533; /* Change to a different color on hover #e3acb3 */
+  color: #ffffff; /* Change color to red when hovered and active (visited) */
+
 }
 
 .header__actions {
