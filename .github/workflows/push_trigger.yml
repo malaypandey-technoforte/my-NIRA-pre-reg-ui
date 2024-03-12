@@ -6,7 +6,6 @@ on:
     branches:
       - '!release-branch'
       - release-1*
-      - release-0*
       - master
       - 1.0.*
       - develop
