@@ -1,6 +1,6 @@
 ::ng-deep.mat-dialog-container {
   display: block;
-  font-family: 'OpenSans' !important;
+  font-family: 'Roboto' !important;
   border-radius: 2px;
   border-color: 1px solid #c02533;
   box-sizing: border-box;
@@ -36,7 +36,7 @@ mat-form-field {
   font-size: 0.8rem;
   margin: 0px;
   font-weight: 600;
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
 }
 .checkbox-accept {
   font-size: 0.8rem;
@@ -78,13 +78,13 @@ mat-form-field {
   border: 1px solid #c02533;
   color: #c02533;
   background-color: white;
-  font-family:'OpenSans', sans-serif;
+  font-family:'Roboto', sans-serif;
 }
 .btn-submit {
   cursor: pointer;
   border-radius: 2px;
   background-color: #c02533;
-  font-family:'OpenSans', sans-serif;
+  font-family:'Roboto', sans-serif;
   border: none;
   color: white;
 }

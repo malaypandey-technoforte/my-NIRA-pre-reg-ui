@@ -8,7 +8,7 @@ import { AttributeModel } from './attribute.modal';
  * @class IdentityModel
  */
 export class IdentityModel {
-  /*constructor(
+  constructor(
     public IDSchemaVersion: number,
     public fullName: AttributeModel[],
     public dateOfBirth: string,
@@ -25,14 +25,14 @@ export class IdentityModel {
     public phone: string,
     public email: string,
     public referenceIdentityNumber: string
-  ) {} */
+  ) {} 
 
   /*
     Must change this interface to match that of NIRA's Identity schema
     ex. Uganda doesn't have regions, provinces etc
   */
 
-  constructor(
+  /*constructor(
     public IDSchemaVersion: number,
     public gender: AttributeModel[],
     public surname: AttributeModel[],
@@ -92,7 +92,7 @@ export class IdentityModel {
     public pollingStationName: AttributeModel[],
     public maritalStatus: AttributeModel[],
    
-  ){}
+  ){}*/
 }
 
 

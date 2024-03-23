@@ -732,7 +732,7 @@ export class FileUploadComponent implements OnInit, OnDestroy {
           if (file.docCatCode === "POA") {
             user.preRegistrationId = i.preRegId;
             user.demographicMetadata.fullName =
-              i.request.demographicDetails.identity.surname;
+              i.request.demographicDetails.identity.fullName;
             activeUsers.push(JSON.parse(JSON.stringify(user)));
           }
         }

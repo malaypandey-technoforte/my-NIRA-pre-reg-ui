@@ -20,7 +20,7 @@
   flex-wrap: wrap;
 }
 .heading {
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   font-size: 20px;
   color: #c02533;
   opacity: 100%;
@@ -40,7 +40,7 @@ img {
   border-radius: 0px;
   margin-left: 15px !important;
   margin-top: 30px;
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   font-size: 11px !important;
 }
 .modify-app-btn {
@@ -49,12 +49,12 @@ img {
   border-radius: 0px;
   margin-left: 12px;
   margin-top: 30px;
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   font-size: 11px !important;
 }
 .create-app-btn {
   color: #ffffff;
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   background-color: #c02533;
   opacity: 90%;
   margin-left: 12px;
@@ -74,7 +74,7 @@ img {
   padding-right: 45px;
 }
 .card-header {
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   font-size: 0.90rem;
   opacity: 100%;
   display: flex;
@@ -95,7 +95,7 @@ img {
   margin-top: 5px !important;
 }
 .card-content {
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   color: #0e0e0e;
   opacity: 90%;
   font-size: 0.75rem;

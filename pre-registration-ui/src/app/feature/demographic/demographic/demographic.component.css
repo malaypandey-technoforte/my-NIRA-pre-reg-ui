@@ -7,7 +7,7 @@
 }
 ::ng-deep .mat-form-field .mat-form-field-label {
   padding-top: 3px;
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
 }
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
   /* margin-bottom: 3px; */
@@ -120,7 +120,7 @@
   align-items: center;
   flex-wrap: wrap;
   background-color: white;
-  font-family: "OpenSans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* ::ng-deep .mat-form-field-label .mat-select-placeholder {
@@ -247,7 +247,7 @@ mat-icon {
 }
 
 .user__genderAndForeigner mat-button-toggle {
-  font-family: "OpenSans", Regular;
+  font-family: "Roboto", Regular;
   font-size: 0.8rem;
   margin: 10px 0px 10px 0px;
   color: #fd518c;
@@ -406,7 +406,7 @@ mat-icon {
   flex: 1;
   margin-right: 10px;
   margin-bottom: 3%; /* (100-32*3)/2 */
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
 }
 .fieldHeader {
   width: 400px;
@@ -415,13 +415,13 @@ mat-icon {
   padding: 10px;
   font-size: 14px;
   background-color: #fbe9eb;
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
 }
 /*  #e35a6d
 } */
 
 .fieldContent {
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   padding: 10px;
   font-size: 13px;
   width: 400px;
@@ -442,12 +442,12 @@ mat-icon {
 } */
 
 .example-headers-align .mat-expansion-panel-header-description {
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
+  justify-content: flex-end;
 }
 
 mat-expansion-panel-header{
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
 }
 
 .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
@@ -475,5 +475,5 @@ mat-expansion-panel-header{
 }
 
 mat-action-row button{
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
 }

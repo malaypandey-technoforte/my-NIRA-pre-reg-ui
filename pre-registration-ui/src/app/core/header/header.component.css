@@ -20,7 +20,6 @@
   background-color: #F5F5F5;
   border-color: #707070;
   border-width: 1px;
-  overflow-x: hidden;
   width: 100%;
   height: 68px;
   padding: 0px 2vw;
@@ -43,7 +42,7 @@
   line-height: 1.42857143 !important;
   text-decoration: solid;
   text-transform: uppercase;
-  font-family: 'OpenSans';
+  font-family: 'Roboto';
   font-weight: 200;
 }
 .list-item > a:hover { /* You can adjust the scale value based on your preference */
@@ -63,7 +62,7 @@
   font-size: 12px !important;
   line-height: 1.42857143 !important;
   letter-spacing: 2px;
-  font-family: 'OpenSans', Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   transition: color 0.3s; /* Add a smooth transition effect on color change */
 }
 

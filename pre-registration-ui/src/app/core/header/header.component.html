@@ -31,7 +31,7 @@
       <mat-nav-list class="list-item">
         <a mat-list-item routerLink="/about-us">{{ 'header.link_about' | translate }}</a>
         <a mat-list-item routerLink="/faq">{{ 'header.link_faq' | translate }}</a>
-        <a mat-list-item routerLink="/contact">{{ 'header.link_contact' | translate }}</a>
+        <a mat-list-item routerLink="/#">{{ 'header.link_contact' | translate }}</a>
       </mat-nav-list>
       <span class="spacer"></span>
       <mat-nav-list *ngIf="!authService.isAuthenticated()" class="list-item">
