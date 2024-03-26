@@ -246,12 +246,13 @@
     },
 
     "login4": {
-      "name": "Can I Become a Ugandan Citizen by Naturalization??",
+      "name": "Can I Become a Ugandan Citizen by Naturalization?",
       "note": " Yes, you can apply for Ugandan citizenship by naturalization if you meet all of the following conditions:",
       "list": {
-        "line1": "You have adequate knowledge of either an indigenous Ugandan language or English.",
-        "line2": "You have a good moral character.",
-        "line3": "You intend to permanently reside in Uganda."
+        "line1": "You have resided in Uganda for a total of 20 years, with at least the last 2 years continuously before applying.",
+        "line2": "You have adequate knowledge of either an indigenous Ugandan language or English.",
+        "line3": "You have a good moral character.",
+        "line4": "You intend to permanently reside in Uganda."
       },
       "note": "Note: These are just the basic requirements additional information can be obtained from DCIC."
     },
@@ -579,7 +580,7 @@
   "header": {
     "link_about": "HOW TO PRE-REGISTER",
     "link_faq": "FAQs",
-    "link_faq-citizen": "Citizenship FAQs",
+    "link_faq-citizen": "Citizenship Guidelines",
     "link_contact": "CONTACT",
     "link_applications": "Your Applications",
     "link_logout": "Logout",
