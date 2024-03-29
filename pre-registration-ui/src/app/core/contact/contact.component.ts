@@ -1,13 +1,31 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent } from '../../app.component';
-
-@NgModule({
-  imports: [BrowserModule, ReactiveFormsModule],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
+@Component({
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
-export class AppModule {}
+export class ContactComponent implements OnInit{
+  form: FormGroup;
+
+  ngOnInit(): void {
+    this.buildForm();
+  }
+
+  constructor(private formBuilder: FormBuilder) {}
+
+  send(): void {
+    const { name, email, message } = this.form.value;
+    alert(`Name: ${name}, Email: ${email}, Message: ${message} `);
+  }
+
+  private buildForm(): void {
+    this.form = this.formBuilder.group({
+      name: this.formBuilder.control(null),
+      email: this.formBuilder.control(null),
+      message: this.formBuilder.control(null),
+    });
+  }
+}

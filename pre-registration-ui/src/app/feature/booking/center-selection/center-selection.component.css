@@ -68,7 +68,7 @@ mat-card {
   margin: 5px 2vw;
 }
 .center-selection__title-card {
-  color: #bf212f;
+  color: #c02533;
   padding: 0;
   display: flex;
   align-items: center;
@@ -109,7 +109,7 @@ section {
 }
 
 .center-card-selected {
-  border: 1px solid #bf212f;
+  border: 1px solid #c02533;
 }
 
 input[type="radio"] {
@@ -184,7 +184,7 @@ input[type="radio"] {
   width: 35px;
   height: 35px;
   background-color: #f4f4f4;
-  border: 1px solid #bf212f;
+  border: 1px solid #c02533;
   border-radius: 0;
   opacity: 100%;
   line-height: 30px;
@@ -204,7 +204,7 @@ input[type="radio"] {
 .search-cancel-btn {
   width: 35px;
   height: 40px;
-  background-color: #bf212f;
+  background-color: #c02533;
   border-radius: 0;
   opacity: 100%;
   text-transform: uppercase;

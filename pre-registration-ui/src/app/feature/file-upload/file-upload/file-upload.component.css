@@ -36,7 +36,7 @@
   margin: 0;
   padding-bottom: 5px;
   font-weight: normal;
-  color: #fd518c;
+  color: #c02533;
 }
 mat-select {
   font-weight: 600;
@@ -99,12 +99,12 @@ mat-select:focus {
 .file-uploaad__header {
   font-size: 15px;
   text-align: left;
-  color: rgba(255, 82, 141, 1);
+  color: rgb(192, 37, 51);
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.12);
   /* padding: 40px 2rem; */
   padding: 1rem 2rem 0 2rem;
   padding-top: 1rem;
-  border-bottom: 1px solid rgba(225, 82, 141, 1);
+  border-bottom: 1px solid rgb(192, 37, 51);
   font-weight: bold;
 }
 
@@ -122,11 +122,11 @@ mat-select:focus {
 .user header {
   margin: 0;
   font-weight: bold;
-  color: #e35a6d;
+  color: #c02533;
 }
 
 .user hr {
-  border-top: 1.5px solid #fd518c;
+  border-top: 1.5px solid #c02533;
   position: relative;
   left: -31.8px;
   margin-top: 0.5rem;
@@ -325,7 +325,7 @@ mat-select:focus {
   color: white;
   min-height: 40px;
   padding: 10px;
-  background-color: #bc6068;
+  background-color: #c02533;
 }
 .fieldContent {
   padding: 10px;
