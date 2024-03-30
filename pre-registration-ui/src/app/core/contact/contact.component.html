@@ -1,101 +1,56 @@
-<section class="text-gray-600 body-font relative">
-    <div class="container px-5 mx-auto flex flex-wrap">
-      <form
-        [formGroup]="form"
-        (ngSubmit)="send()"
-        class="dispaly"
-      >
-        <h1
-          class="text-gray-900 text-3xl mb-4 font-medium title-font text-red-500"
-        >
-          NIRA Contact Us Form
-        </h1>
-        <div class="relative mb-4">
-          <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-          <input
-            formControlName="name"
-            type="text"
-            id="name"
-            name="name"
-            class="
-              w-full
-              bg-white
-              rounded
-              border border-gray-300
-              text-base
-              outline-none
-              text-gray-700
-              py-1
-              px-3
-              leading-8
-            "
-          />
-        </div>
-        <div class="relative mb-4">
-          <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-          <input
-            formControlName="email"
-            type="email"
-            id="email"
-            name="email"
-            class="
-              w-full
-              bg-white
-              rounded
-              border border-gray-300
-              text-base
-              outline-none
-              text-gray-700
-              py-1
-              px-3
-              leading-8
-            "
-          />
-        </div>
-        <div class="relative mb-4">
-          <label for="message" class="leading-7 text-sm text-gray-600"
-            >Message</label
-          >
-          <textarea
-            formControlName="message"
-            id="message"
-            name="message"
-            class="
-              w-full
-              bg-white
-              rounded
-              border border-gray-300
-              h-32
-              text-base
-              outline-none
-              text-gray-700
-              py-1
-              px-3
-              resize-none
-              leading-6
-              transition-colors
-              duration-200
-              ease-in-out
-            "
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          class="
-            text-white
-            bg-red-500
-            border-0
-            py-2
-            px-6
-            focus:outline-none
-            hover:bg-red-600
-            rounded
-            text-lg
-          "
-        >
-          Send
-        </button>
-      </form>
-    </div>
-  </section>
+<header class="header">
+
+  <h2>Contact Us To Assist You</h2>
+</header>
+
+<div class="content">
+  <div class="contact-info">
+    <h3>NIRA (HEADQUARTERS) </h3> 
+   
+    <p>National Independence Grounds,</p>
+    <p>Kololo Airstrip, P.O.Box 26529,</p>
+    <p>Kampala Uganda</p>
+    <h3>Phone</h3>
+    <p>Reception:  +256 312119600</p> 
+    <h3>For client inquiries, contact:</h3>
+    <p>Call Center: 0800211700</p>
+    <h3>Email</h3>
+    <p>info@nira.go.ug</p>
+  </div>
   
+  <div class="contact-form">
+    <h3>Send Your Message</h3>
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="3" required></textarea>
+      <button class="button" type="submit">SEND MESSAGE</button>
+    </form>
+  </div>
+  <div class="empty"> 
+    <h3>Mission</h3>
+    <p>“To Establish and Maintain a Credible, Secure and Update-to-date Register of all Persons in Uganda for National Security and Socio-economic Development.”</p>
+    <h3>Vision</h3>
+    <p>“To be a Centre of Excellence in providing Identification and Registration of persons.”</p>
+
+    <h3> (PIIP-TC)</h3>
+    <p>-Professionalism</p>
+    <p>-Integrity</p>
+    <p>-Innovation</p>
+    <p>-Teamwork</p>
+    <p>-Customer Centered</p>
+
+</div>
+</div>   
+
+<div class="main-footer">
+  <p>
+    <img src="../../../assets/logo-final.png" style="height:20px; vertical-align: middle;" /> <strong>National Security Information
+      System</strong>
+    <span class="version-txt"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pre-registration UI verison:
+        {{appVersion}}</strong></span>
+  </p>
+</div>
