@@ -90,6 +90,7 @@ body {
 .main-footer {
   background-color: #c02533; /* Adjust footer background color */
   padding: 10px;
+  color: #fff;
   text-align: center; /* Assuming you want centered content */
 }
 
@@ -103,5 +104,5 @@ body {
 
 .version-txt {
   font-size: 0.8rem; /* Adjust version text size */
-  color: #666; /* Adjust version text color */
+  color: #fefefe; /* Adjust version text color */
 }
