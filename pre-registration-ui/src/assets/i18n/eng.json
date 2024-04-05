@@ -258,14 +258,32 @@
     },
 
     "login5": {
-      "name": "Can I Become a Ugandan Citizen by Naturalization??",
-      "note": " Yes, you can apply for Ugandan citizenship by naturalization if you meet all of the following conditions:",
+      "name": "I was a Ugandan citizen before the 1995 constitution. How do I get a National ID?",
+      "note": "If you already held Ugandan citizenship on October 8th, 1995, the day the current Constitution came into effect, you automatically retained your citizenship under Article 9. However, to obtain a National ID, you'll need to provide evidence of your existing citizenship i.e under granted 1962,1966,1967. This is because the National Identification and Registration Authority (NIRA) needs to verify your status before issuing the ID. Here are some documents that can support your claim:",
       "list": {
-        "line1": "You have adequate knowledge of either an indigenous Ugandan language or English.",
-        "line2": "You have a good moral character.",
-        "line3": "You intend to permanently reside in Uganda."
+        "line1": "Previous passports: Passports of your parents or grandparents showing their birth and your birth in Uganda during the British Protectorate period.",
+        "line2": "Birth certificates: Your birth certificate indicating your birth in Uganda during the British Protectorate period.",
+        "line3": "Previous immigration records: Any documentation showing your immigration status and residence in Uganda before the 1995 Constitution."
       }
     },
+    "login6": {
+      "name": "Does Uganda recognize Dual Citizenship?",
+      "note": "Yes, dual citizenship is possible in Uganda under the 1995 Constitution (as amended) and the Uganda Citizenship and Immigration Control (Amendment) Act of 2009. This means you can hold Ugandan citizenship alongside another nationality. Who is eligible and how does one apply?",
+      "list": {
+        "line1": "Ugandan citizens: If you already have Ugandan citizenship and wish to acquire another, you can apply for dual citizenship.",
+        "line2": "Non-citizens: If you're a foreign national seeking Ugandan citizenship but want to retain your current nationality, you can apply for dual citizenship.",
+        "line3": "Both scenarios require an application to the National Citizenship and Immigration Board (NCIB). They will assess your eligibility based on specific criteria."
+      }
+    },
+    "login7": {
+      "name": "As a dual citizen what do I need to present to obtain a National ID ?",
+      "note": "",
+      "list": {
+        "line1": "Once you receive your Certificate of Dual Citizenship from the NCIB, you can apply for a National ID by presenting the certificate alongside a certified copy of the Certificate to any of the Designated NIRA registration Centers."
+       
+      }
+    },
+    
     "select_data_capture_language": {
       "name": "Select data capture language",
       "list": {

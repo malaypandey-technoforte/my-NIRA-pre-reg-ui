@@ -119,6 +119,55 @@
         <span class="note-placer">{{'quick_guideFaq.login4.note' | translate}}</span>
       </mat-expansion-panel>
 
+<mat-expansion-panel (opened)="panelOpenState = 6" (closed)="panelOpenState = -1">
+        <mat-expansion-panel-header [ngStyle]="{
+                  'background-color': panelOpenState === 6 ? '#c02533' : 'white',
+                  'margin-bottom': panelOpenState === 6 ? '8px' : '0'
+                }">
+          <mat-panel-title [ngClass]="panelOpenState === 6 ? 'white-text' : 'pink-text'">
+            {{'quick_guideFaq.login5.name' | translate}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span class="note-placer">{{'quick_guideFaq.login5.note' | translate}}</span>
+        <ol>
+          <li>{{'quick_guideFaq.login5.list.line1' | translate}}</li>
+          <li>{{'quick_guideFaq.login5.list.line2' | translate}}</li>
+          <li>{{'quick_guideFaq.login5.list.line3' | translate}}</li>
+        </ol>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = 7" (closed)="panelOpenState = -1">
+        <mat-expansion-panel-header [ngStyle]="{
+                  'background-color': panelOpenState === 7 ? '#c02533' : 'white',
+                  'margin-bottom': panelOpenState === 7 ? '8px' : '0'
+                }">
+          <mat-panel-title [ngClass]="panelOpenState === 7 ? 'white-text' : 'pink-text'">
+            {{'quick_guideFaq.login6.name' | translate}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span class="note-placer">{{'quick_guideFaq.login6.note' | translate}}</span>
+        <ol>
+          <li>{{'quick_guideFaq.login6.list.line1' | translate}}</li>
+          <li>{{'quick_guideFaq.login6.list.line2' | translate}}</li>
+        </ol>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel (opened)="panelOpenState = 8" (closed)="panelOpenState = -1">
+        <mat-expansion-panel-header [ngStyle]="{
+                  'background-color': panelOpenState === 8 ? '#c02533' : 'white',
+                  'margin-bottom': panelOpenState === 8 ? '8px' : '0'
+                }">
+          <mat-panel-title [ngClass]="panelOpenState === 8 ? 'white-text' : 'pink-text'">
+            {{'quick_guideFaq.login7.name' | translate}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span class="note-placer">{{'quick_guideFaq.login7.note' | translate}}</span>
+        <ol>
+          <li>{{'quick_guideFaq.login7.list.line1' | translate}}</li>
+       
+        </ol>
+      </mat-expansion-panel>
+
     </mat-accordion>
   </mat-card>
 </div>
