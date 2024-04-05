@@ -4,14 +4,7 @@ name: Maven Package upon a push
 on:
   push:
     branches:
-      - '!release-branch'
-      - release-1*
-      - master
-      - 1.0.*
-      - develop
-      - 1.1.*
-      - MOSIP-11719
-      - 1.2.*
+      - niradev-1.2.0.1-B1
   
 jobs:
   # This workflow contains a single job called "build"
