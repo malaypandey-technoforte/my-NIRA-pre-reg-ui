@@ -17,13 +17,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
 
-      - name: Install jspdf
-        run: npm install jspdf
       - name: Download FileSaver.js
         run: |
-          curl -O -L https://github.com/eligrey/FileSaver.js/raw/master/src/FileSaver.js
-          mkdir -p node_modules/jspdf # Create jspdf directory if not exist
-          mv FileSaver.js node_modules/jspdf/ # Move FileSaver.js to jspdf directory
+          mkdir -p pre-registration-ui/node_modules/jspdf # Create jspdf directory if not exist
+          curl -o pre-registration-ui/node_modules/jspdf/FileSaver.js -L https://github.com/eligrey/FileSaver.js/raw/master/src/FileSaver.js
 
       - name: npm install
         run: cd ${{ env.SERVICE_LOCATION }} && npm install --ignore-scripts   
