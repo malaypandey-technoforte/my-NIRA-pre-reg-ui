@@ -12,7 +12,8 @@ export class FaqCitizenComponent implements OnInit {
   answerTranslation = "";
   
   // added to resolve building error
-  panelOpenState: boolean = false; // Define panelOpenState property
+  panelOpenState: number = -1; // Declare panelOpenState as a number property with an initial value
+
   
   constructor(private dataStorageService: DataStorageService) {}
 
