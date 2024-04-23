@@ -24,8 +24,9 @@ jobs:
 
       - name: Copy FileSaver.js to project directory
         run: |
-          ls -al file-saver # Print the contents of the cloned directory for debugging
-          cp file-saver/FileSaver.js ./node_modules/jspdf/FileSaver.js
+          ls -al file-saver # Print the contents of the cloned directory for debugging 
+          cp file-saver/src/FileSaver.js ./node_modules/jspdf/FileSaver.js
+
 
 
       - name: npm install
