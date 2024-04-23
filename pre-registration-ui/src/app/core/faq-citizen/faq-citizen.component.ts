@@ -10,7 +10,10 @@ export class FaqCitizenComponent implements OnInit {
   langCode = "";
   data = [];
   answerTranslation = "";
-
+  
+  // added to resolve building error
+  panelOpenState: boolean = false; // Define panelOpenState property
+  
   constructor(private dataStorageService: DataStorageService) {}
 
   ngOnInit() {
