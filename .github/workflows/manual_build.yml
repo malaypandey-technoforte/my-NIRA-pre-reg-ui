@@ -19,9 +19,12 @@ jobs:
 
       - name: Clone FileSaver.js repository
         run: git clone --branch 1.3.8 --depth 1 https://github.com/eligrey/FileSaver.js.git file-saver
+             ls -al file-saver # Print the contents of the cloned directory for debugging
 
       - name: Copy FileSaver.js to project directory
-        run: cp file-saver/FileSaver.js ./node_modules/jspdf/FileSaver.js
+        run: |
+             ls -al file-saver # Print the contents of the cloned directory for debugging
+             cp file-saver/FileSaver.js ./node_modules/jspdf/FileSaver.js
 
       - name: npm install
         run: cd ${{ env.SERVICE_LOCATION }} && npm install --ignore-scripts   
