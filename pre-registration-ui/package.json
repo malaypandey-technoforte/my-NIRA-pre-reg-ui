@@ -43,6 +43,7 @@
     "ngx-mat-select-search": "^1.8.0",
     "ngx-print": "^1.1.4",
     "ngx7-material-keyboard": "^0.1.2",
+    "file-saver": "^2.0.1",
     "ol": "^5.3.0",
     "osm": "^1.0.0",
     "rxjs": "^6.0.0",
