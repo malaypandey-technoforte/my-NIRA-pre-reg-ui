@@ -446,13 +446,22 @@ export class CenterSelectionComponent
     this.service.listOfCenters(coords);
   }
 
+  // routeNext() {
+  //   this.canDeactivateFlag = false;
+  //   this.router.navigate(["../pick-time"], {
+  //     relativeTo: this.route,
+  //     queryParams: { regCenter: this.selectedCentre.id },
+  //   });
+  // }
+
+
   routeNext() {
-    this.canDeactivateFlag = false;
-    this.router.navigate(["../pick-time"], {
-      relativeTo: this.route,
-      queryParams: { regCenter: this.selectedCentre.id },
-    });
+    let url = Utils.getURL(this.router.url, "summary", 3);
+    // url = url + `/${this.preRegId}/pick-center`;
+    url=url + `/${this.preRegId[0]}/acknowledgement`;
+    this.router.navigateByUrl(url);
   }
+  
 
   routeDashboard() {
     this.canDeactivateFlag = false;

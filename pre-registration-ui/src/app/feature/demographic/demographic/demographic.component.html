@@ -1,8 +1,11 @@
+
 <div class="spinner" *ngIf="!primaryuserForm && !hasError">
   <mat-spinner></mat-spinner>
 </div>
+
 <div>
   <div class="wrapper">
+  
     <div class="user" *ngIf="primaryuserForm">
       <header>{{demographiclabels.title}}
         <span>
@@ -2442,7 +2445,7 @@
                   <span *ngFor="let field of uiFieldsForAlignmentGroups[alignmentGroup]; index as uiFieldIndex">
                     <div class="fieldContainer" *ngIf="field.isVisible == true && field.renderID.startsWith('frm_3a_b6a')">
                       <div class="fieldHeader" [ngStyle]="field.headerStyle">
-                        <!-- Create container header with label in user's login lang -->
+                        
                         <mat-label>{{field.labelName[userPrefLanguage]}} : </mat-label>
                         <span *ngIf="field.required" class="required-annotation">*</span>
                       </div>
@@ -2500,7 +2503,7 @@
                           <ng-container *ngIf="field.controlType === 'button'">
                             <span *ngIf="i == 0" [dir]="dataCaptureLangsDir[i]">
                               <mat-button-toggle-group class="btn_grp" [formControlName]="field.id"
-                                (click)="addSpouseDialog()">
+                              (change)="onChangeHandler(field.id);">
                                 <ng-container *ngFor="let button of selectOptionsDataArray[field.id]">
                                   <span *ngIf="button.languageCode === dataCaptureLanguage">
                                     <mat-button-toggle class="btn_grp mat-button-toggle" value="{{button.valueCode}}"
@@ -5436,16 +5439,7 @@
               </mat-action-row>
             </mat-expansion-panel>
 
-
-                    
-
-
-          
           </mat-accordion>
-
-
-
-
 
         </form>
       </div>
@@ -5460,5 +5454,8 @@
       (click)="onSubmit()">
       {{demographiclabels.action_preview}}
     </button>
+    <div class="mat-error" *ngIf="!userForm.valid && isSubmitted">
+           {{getValidationErrorMessages()}}
+    </div>
   </div>
 </div>

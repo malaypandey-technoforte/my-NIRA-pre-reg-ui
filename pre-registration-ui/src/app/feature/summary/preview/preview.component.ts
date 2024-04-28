@@ -718,4 +718,10 @@ export class PreviewComponent implements OnInit {
     url = url + `/${this.preRegId}/pick-center`;
     this.router.navigateByUrl(url);
   }
+  // navigateNext() {
+  //   let url = Utils.getURL(this.router.url, "summary", 3);
+  //   // url = url + `/${this.preRegId}/pick-center`;
+  //   url=url + `/${this.preRegId[0]}/acknowledgement`;
+  //   this.router.navigateByUrl(url);
+  // }
 }

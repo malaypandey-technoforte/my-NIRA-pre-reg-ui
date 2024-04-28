@@ -595,6 +595,7 @@ export class FileUploadComponent implements OnInit, OnDestroy {
                         );
                       }
                       this.userForm.controls[uiField.id].setValue("");
+                      // debugger;
                       this.LOD.push(documentCategory);
                     }
                   }
