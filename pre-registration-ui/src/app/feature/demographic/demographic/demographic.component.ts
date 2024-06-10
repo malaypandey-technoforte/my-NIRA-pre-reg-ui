@@ -836,50 +836,58 @@ export class DemographicComponent extends FormDeactivateGuardService
    * @param controlObject is Identity Type Object
    *  ex: { id : 'region',controlType: 'dropdown' ...}
    */
-  async dropdownApiCall(controlId: string) {
-    if (this.isThisFieldInLocationHeirarchies(controlId)) {
-      //console.log("dropdownApiCall : " + controlId);
-      if (this.getIndexInLocationHeirarchy(controlId) !== 0) {
-        this.selectOptionsDataArray[controlId] = [];
-        this.filteredSelectOptions[controlId] = new ReplaySubject<
-          CodeValueModal[]
-        >(1);
-        const locationIndex = this.getIndexInLocationHeirarchy(controlId);
-        const parentLocationName = this.getLocationNameFromIndex(
-          controlId,
-          locationIndex - 1
-        );
-        let locationCode = this.userForm.controls[`${parentLocationName}`]
-          .value;
-        if (!locationCode) {
-          this.identityData.forEach((obj) => {
-            if (obj.id == controlId) {
-              locationCode = obj.parentLocCode;
-            }
-          });
-        }
-        //console.log(`${parentLocationName} : ${locationCode}`);
-        let promisesArr = await this.loadLocationData(locationCode, controlId);
-        Promise.all(promisesArr).then((values) => {
-          //this.userForm.controls[`${controlId}_search`].setValue("");
-          const newDataArr = this.selectOptionsDataArray[controlId];
-          if (
-            newDataArr &&
-            newDataArr.length / this.dataCaptureLanguages.length == 1
-          ) {
-            const firstValue = newDataArr[0].valueCode;
-            if (firstValue) {
-              this.userForm.controls[`${controlId}`].setValue(firstValue);
-            }
-          }
-          this.searchInDropdown(controlId);
-          this.resetLocationFields(controlId);
-          //console.log(`done`);
-          return;
-        });
+ /**
+*
+* @description this method is to make dropdown api calls
+*
+* @param controlObject is Identity Type Object
+* ex: { id : 'region',controlType: 'dropdown' ...}
+*/
+async dropdownApiCall(controlId: string) {
+  let _this = this;
+  if (this.isThisFieldInLocationHeirarchies(controlId)) {
+    //console.log("dropdownApiCall : " + controlId);
+    if (this.getIndexInLocationHeirarchy(controlId) !== 0) {
+    this.selectOptionsDataArray[controlId] = [];
+    this.filteredSelectOptions[controlId] = new ReplaySubject<CodeValueModal[]>(1);
+    let filtered = this.uiFields.find(uiField => uiField.id == controlId);
+    const possibleParentLocations = this.getLocationNameFromFieldId(
+    controlId
+    );
+    for(let parentLocation of possibleParentLocations) {
+      let locationCode = this.userForm.controls[`${parentLocation.id}`].value;
+      if (!locationCode) {
+      _this.identityData.forEach((obj) => {
+      if (obj.id == controlId) {
+      locationCode = obj.parentLocCode;
       }
-    }
-  }
+      });
+      }
+      //console.log(`${parentLocationName} : ${locationCode}`);
+      let promisesArr = await this.loadLocationData(locationCode, controlId,
+      filtered.locationHierarchyName);
+      Promise.all(promisesArr).then((values) => {
+      //this.userForm.controls[`${controlId}_search`].setValue("");
+      const newDataArr = _this.selectOptionsDataArray[controlId];
+      if (newDataArr && (newDataArr.length / _this.dataCaptureLanguages.length) == 1) {
+      const firstValue = newDataArr[0].valueCode;
+      if (firstValue) {
+      _this.userForm.controls[`${controlId}`].setValue(firstValue);
+      }
+      _this.searchInDropdown(controlId);
+      _this.resetLocationFields(controlId);
+      return;
+      }
+      this.searchInDropdown(controlId);
+      this.resetLocationFields(controlId);
+//console.log(`done`);
+return;
+});
+}
+}
+}
+}
+    
   toFormControl(point: AbstractControl): FormControl {
     return point as FormControl;
   }
@@ -1192,94 +1200,97 @@ export class DemographicComponent extends FormDeactivateGuardService
    */
   private async setLocations() {
     this.locationHeirarchies.forEach(async (locationHeirarchyArr) => {
-      locationHeirarchyArr.forEach(async (locationHeirarchy, index) => {
-        let parentLocCode = null;
-        this.identityData.forEach((obj) => {
-          if (
-            obj.inputRequired === true &&
-            obj.controlType !== null &&
-            !(obj.controlType === "fileupload")
-          ) {
-            if (obj.id == locationHeirarchy) {
-              parentLocCode = obj.parentLocCode;
-            }
-          }
-        });
-        if (!parentLocCode && index == 0) {
-          parentLocCode = this.dataStorageService.getLocationMetadataHirearchy();
-        }
-        if (parentLocCode)
-          await this.loadLocationData(parentLocCode, locationHeirarchy);
-      }, this);
-    }, this);
-  }
-  /**
-   * @description This is to reset the input values
-   * when the parent input value is changed
-   *
-   * @param fieldName location dropdown control Name
-   */
-  resetLocationFields(fieldName: string) {
-    //console.log("resetLocationFields " + fieldName);
-    if (this.isThisFieldInLocationHeirarchies(fieldName)) {
-      const locationFields = this.getLocationHierarchy(fieldName);
-      const index = locationFields.indexOf(fieldName);
-      for (let i = index + 1; i < locationFields.length; i++) {
-        this.userForm.controls[locationFields[i]].setValue("");
-        this.userForm.controls[locationFields[i]].markAsUntouched();
+    locationHeirarchyArr.forEach(async (locationHeirarchy, index) => {
+    let parentLocCode = null;
+    let locationHierarchyName = null;
+    this.identityData.forEach((obj) => {
+    if (
+    obj.inputRequired === true &&
+    obj.controlType !== null &&
+    !(obj.controlType === "fileupload")
+    ) {if (obj.id == locationHeirarchy) {
+      parentLocCode = obj.parentLocCode;
+      locationHierarchyName = obj.locationHierarchyName;
       }
-    }
+      }
+      });
+      if (!parentLocCode && index == 0) {
+      parentLocCode = this.dataStorageService.getLocationMetadataHirearchy();
+      }
+      if (parentLocCode)debugger;
+      await this.loadLocationData(
+      parentLocCode,
+      locationHeirarchy,
+      locationHierarchyName
+      );
+      }, this);
+      }, this);
+      }
+      
+ /**
+* @description This is to reset the input values
+* when the parent input value is changed
+*
+* @param fieldName location dropdown control Name
+*/
+resetLocationFields(fieldName: string) {
+  //console.log("resetLocationFields " + fieldName);
+  if (this.isThisFieldInLocationHeirarchies(fieldName)) {
+  const locationFields = this.getLocationHierarchy(fieldName);
+  const index = locationFields.indexOf(fieldName);
+  for (let i = index + 1; i < locationFields.length; i++) {
+  let currentSelection = this.uiFields.find(uiField => uiField.id == fieldName);
+  let childSelection = this.uiFields.find(uiField => uiField.id == locationFields[i]);
+  if(childSelection.locationHierarchyLevel > currentSelection.locationHierarchyLevel) {
+  this.userForm.controls[locationFields[i]].setValue("");
+  this.userForm.controls[locationFields[i]].markAsUntouched();
+  }
+  }
+  }
   }
 
-  /**
-   * @description This is get the location the input values
-   *
-   * @param fieldName location dropdown control Name
-   * @param locationCode location code of parent location
-   */
-  async loadLocationData(locationCode: string, fieldName: string) {
-    let promisesArr = [];
-    if (fieldName && fieldName.length > 0) {
-      this.dataCaptureLanguages.forEach(async (dataCaptureLanguage) => {
-        promisesArr.push(
-          new Promise((resolve) => {
-            this.subscriptions.push(
-              this.dataStorageService
-                .getLocationImmediateHierearchy(
-                  dataCaptureLanguage,
-                  locationCode
-                )
-                .subscribe(
-                  (response) => {
-                    //console.log("fetched locations for: " + fieldName + ": " + dataCaptureLanguage);
-                    if (response[appConstants.RESPONSE]) {
-                      response[appConstants.RESPONSE][
-                        appConstants.DEMOGRAPHIC_RESPONSE_KEYS.locations
-                      ].forEach((element) => {
-                        let codeValueModal: CodeValueModal = {
-                          valueCode: element.code,
-                          valueName: element.name,
-                          languageCode: element.langCode,
-                        };
-                        this.selectOptionsDataArray[`${fieldName}`].push(
-                          codeValueModal
-                        );
-                      });
-                    }
-                    resolve(true);
-                  },
-                  (error) => {
-                    //loading locations can be fail proof, no need to display err promt to user
-                    //this.showErrorMessage(error);
-                  }
-                )
-            );
-          })
-        );
+ /**
+* @description This is get the location the input values
+*
+* @param fieldName location dropdown control Name
+* @param locationCode location code of parent location
+*/
+async loadLocationData(locationCode: string, fieldName: string, locationHierarchyName: string) {
+  let promisesArr = [];
+  if (fieldName && fieldName.length > 0) {
+  this.dataCaptureLanguages.forEach(async (dataCaptureLanguage) => {
+  promisesArr.push(new Promise((resolve) => {
+    this.subscriptions.push(
+      this.dataStorageService
+      .getLocationImmediateHierearchy(dataCaptureLanguage, locationCode, locationHierarchyName)
+      .subscribe(
+      (response) => {
+      //console.log("fetched locations for: " + fieldName + ": " + dataCaptureLanguage);
+      if (response[appConstants.RESPONSE]) {
+      response[appConstants.RESPONSE][
+      appConstants.DEMOGRAPHIC_RESPONSE_KEYS.locations
+      ].forEach((element) => {
+      let codeValueModal: CodeValueModal = {
+      valueCode: element.code,
+      valueName: element.name,
+      languageCode: element.langCode,
+      };
+      this.selectOptionsDataArray[`${fieldName}`].push(codeValueModal);
       });
-    }
-    return promisesArr;
-  }
+      }
+      resolve(true);
+      },
+      (error) => {
+      //loading locations can be fail proof, no need to display err promt to user
+      //this.showErrorMessage(error);
+      }
+      )
+      );
+      }));
+      });
+      }
+      return promisesArr;
+      }
 
   /**
    * @description This is to get the list of gender available in the master data.
@@ -1356,103 +1367,102 @@ export class DemographicComponent extends FormDeactivateGuardService
     );
   }
 
-  /**
-   * @description This set the initial values for the form attributes.
-   *
-   * @memberof DemographicComponent
-   */
-  async setFormControlValues() {
-    return new Promise(async (resolve) => {
-      if (!this.dataModification) {
-        this.uiFields.forEach((control, index) => {
-          this.dataCaptureLanguages.forEach((language, i) => {
-            if (this.isControlInMultiLang(control)) {
-              const controlId = control.id + "_" + language;
-              this.userForm.controls[`${controlId}`].setValue("");
-            } else if (i == 0) {
-              const controlId = control.id;
-              this.userForm.controls[`${controlId}`].setValue("");
-            }
-          });
+ /**
+  * @description This set the initial values for the form attributes.
+  *
+  * @memberof DemographicComponent
+  */
+ async setFormControlValues() {
+  return new Promise(async (resolve) => {
+    if (!this.dataModification) {
+      this.uiFields.forEach((control, index) => {
+        this.dataCaptureLanguages.forEach((language, i) => {
+          if (this.isControlInMultiLang(control)) {
+            const controlId = control.id + "_" + language;
+            this.userForm.controls[`${controlId}`].setValue("");
+          } else if (i == 0) {
+            const controlId = control.id;
+            this.userForm.controls[`${controlId}`].setValue("");
+          }
         });
-        resolve(true);
-      } else {
-        this.loggerService.info("user", this.user);
-        if (this.user.request === undefined) {
-          await this.getUserInfo(this.preRegId);
-        }
-        let promisesResolved = [];
-        this.uiFields.forEach(async (control, index) => {
-          if (this.user.request.demographicDetails.identity[control.id]) {
-            if (this.isControlInMultiLang(control)) {
-              this.dataCaptureLanguages.forEach((language, i) => {
-                const controlId = control.id + "_" + language;
-                let dataArr = this.user.request.demographicDetails.identity[
+      });
+      resolve(true);
+    } else {
+      this.loggerService.info("user", this.user);
+      if (this.user.request === undefined) {
+        await this.getUserInfo(this.preRegId);
+      }
+      let promisesResolved = [];
+      this.uiFields.forEach(async (control, index) => {
+        if (this.user.request.demographicDetails.identity[control.id]) {
+          if (this.isControlInMultiLang(control)) {
+            this.dataCaptureLanguages.forEach((language, i) => {
+              const controlId = control.id + "_" + language;
+              let dataArr = this.user.request.demographicDetails.identity[
+                control.id
+              ];
+              if (Array.isArray(dataArr)) {
+                dataArr.forEach((dataArrElement) => {
+                  if (dataArrElement.language == language) {
+                    this.userForm.controls[`${controlId}`].setValue(
+                      dataArrElement.value
+                    );
+                  }
+                });
+              }
+            });
+          } else {
+            if (control.controlType === "ageDate") {
+              this.setDateOfBirth(control.id);
+            }
+            if (control.controlType === "date") {
+              this.setDate(control.id);
+            }
+            else if (control.type === "string") {
+              this.userForm.controls[`${control.id}`].setValue(
+                this.user.request.demographicDetails.identity[`${control.id}`]
+              );
+            }
+            else if (control.type === "simpleType") {
+              this.userForm.controls[`${control.id}`].setValue(
+                this.user.request.demographicDetails.identity[control.id][0]
+                  .value
+              );
+            }
+            if (
+              control.controlType === "dropdown" ||
+              control.controlType === "button"
+            ) {
+              if (this.isThisFieldInLocationHeirarchies(control.id)) {
+                const locationIndex = this.getIndexInLocationHeirarchy(
                   control.id
-                ];
-                if (Array.isArray(dataArr)) {
-                  dataArr.forEach((dataArrElement) => {
-                    if (dataArrElement.language == language) {
-                      this.userForm.controls[`${controlId}`].setValue(
-                        dataArrElement.value
-                      );
-                    }
-                  });
-                }
-              });
-            } else {
-              if (control.controlType === "ageDate") {
-                this.setDateOfBirth(control.id);
-              }
-              if (control.controlType === "date") {
-                this.setDate(control.id);
-              } else if (control.type === "string") {
-                this.userForm.controls[`${control.id}`].setValue(
-                  this.user.request.demographicDetails.identity[`${control.id}`]
                 );
-              } else if (control.type === "simpleType") {
-                this.userForm.controls[`${control.id}`].setValue(
-                  this.user.request.demographicDetails.identity[control.id][0]
-                    .value
+                const parentLocationName = this.getLocationNameFromIndex(
+                  control.id,
+                  locationIndex - 1
                 );
-              }
-              if (
-                control.controlType === "dropdown" ||
-                control.controlType === "button"
-              ) {
-                if (this.isThisFieldInLocationHeirarchies(control.id)) {
-                  const locationIndex = this.getIndexInLocationHeirarchy(
-                    control.id
-                  );
-                  const parentLocationName = this.getLocationNameFromIndex(
-                    control.id,
-                    locationIndex - 1
-                  );
-                  if (parentLocationName) {
-                    let locationCode = this.userForm.controls[
-                      parentLocationName
-                    ].value;
-                    if (locationCode) {
-                      // console.log(`fetching locations for: ${control.id}`);
-                      // console.log(`with parent: ${parentLocationName} having value: ${locationCode}`);
-                      promisesResolved.push(
-                        await this.loadLocationData(locationCode, control.id)
-                      );
-                      //console.log(this.selectOptionsDataArray[control.id]);
-                    }
+                if (parentLocationName) {
+                  let locationCode = this.userForm.controls[parentLocationName].value;
+                  if (locationCode) {
+                    // console.log(`fetching locations for: ${control.id}`);
+                    // console.log(`with parent: ${parentLocationName} having value: ${locationCode}`);
+                    promisesResolved.push(await this.loadLocationData(locationCode, control.id, control.locationHierarchyName));
+                    //console.log(this.selectOptionsDataArray[control.id]);
                   }
                 }
               }
             }
           }
-        });
-        Promise.all(promisesResolved).then((values) => {
-          //console.log(`done fetching locations`);
-          resolve(true);
-        });
-      }
-    });
-  }
+        }
+      });
+      Promise.all(promisesResolved).then((values) => {
+        //console.log(`done fetching locations`);
+        resolve(true);
+      });
+    }
+  });  
+}
+
 
   /**
    * @description This will get the gender details from the master data.
@@ -1852,7 +1862,7 @@ export class DemographicComponent extends FormDeactivateGuardService
           }
         });
       });
-      debugger;
+      
       if (this.userForm.valid) {
         const identity = this.createIdentityJSONDynamic(false);
         const request = this.createRequestJSON(identity);
@@ -2422,7 +2432,7 @@ export class DemographicComponent extends FormDeactivateGuardService
 
   getValidationErrorMessages() {
       const error:any = this.getFormValidationErrors(this.userForm.controls).shift();
-      if (error) {debugger
+      if (error) {
         let text;
         switch (error.error_name) {
           case 'required': text = `${error.control_name} is required!`; break;
@@ -2461,4 +2471,10 @@ export class DemographicComponent extends FormDeactivateGuardService
     });
     return errors;
   }
+  getLocationNameFromFieldId = (fieldId) => {
+    let filtered = this.uiFields.find(uiField => uiField.id == fieldId);
+    let parentField = this.uiFields.filter(uiField => uiField.locationHierarchyLevel ==
+    filtered.locationHierarchyLevel - 1 && this.getLocationHierarchy(fieldId).indexOf(uiField.id) > -1);
+    return (!Array.isArray(parentField) || !parentField.length) ? null : parentField;
+    };
 }
