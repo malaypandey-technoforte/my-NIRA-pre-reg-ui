@@ -5446,6 +5446,9 @@
     </div>
   </div>
   <div class="user__buttons" *ngIf="primaryuserForm">
+    <div class="displayError" *ngIf="!userForm.valid && isSubmitted">
+      {{getValidationErrorMessages()}}
+</div>
     <button *ngIf="!showPreviewButton" class="user__btn" type="button" [disabled]="!dataUploadComplete"
       (click)="onSubmit()">
       {{demographiclabels.action_continue}}
@@ -5454,8 +5457,6 @@
       (click)="onSubmit()">
       {{demographiclabels.action_preview}}
     </button>
-    <div class="mat-error" *ngIf="!userForm.valid && isSubmitted">
-           {{getValidationErrorMessages()}}
-    </div>
+    
   </div>
 </div>
