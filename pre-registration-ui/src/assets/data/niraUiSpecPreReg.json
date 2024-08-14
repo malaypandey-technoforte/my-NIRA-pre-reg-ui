@@ -711,7 +711,156 @@
                     "path": "$.userCase"
                 }
             ]
-        }
+        },
+        "dependentFields": [
+            {
+                "fieldId": "preferredPollingStation"
+            },
+            {
+                "fieldId": "pollingStationNameResidence"
+            },
+            {
+                "fieldId": "pollingStationNameOrigin"
+            },
+            {
+                "fieldId": "maritalStatus"
+            },
+            {
+                "fieldId": "spouseSurname"
+            },
+            {
+                "fieldId": "spouseGivenName"
+            },
+            {
+                "fieldId": "spouseOtherNames"
+            },
+            {
+                "fieldId": "spouseMaidenName"
+            },
+            {
+                "fieldId": "spousePreviousName"
+            },
+            {
+                "fieldId": "spouseNIN"
+            },
+            {
+                "fieldId": "spouseCitizenshipType"
+            },
+            {
+                "fieldId": "spousePlaceOfMarriage"
+            },
+            {
+                "fieldId": "spouseDateOfMarriage"
+            },
+            {
+                "fieldId": "spouseTypeOfMarriage"
+            },
+            {
+                "fieldId": "spouseMarriageCertificateNumber"
+            },
+            {
+                "fieldId": "otherSpouses"
+            },
+            {
+                "fieldId": "spouseTwoSurname"
+            },
+            {
+                "fieldId": "spouseTwoGivenName"
+            },
+            {
+                "fieldId": "spouseTwoOtherNames"
+            },
+            {
+                "fieldId": "spouseTwoMaidenName"
+            },
+            {
+                "fieldId": "spouseTwoPreviousName"
+            },
+            {
+                "fieldId": "spouseTwoNIN"
+            },
+            {
+                "fieldId": "spouseTwoCitizenshipType"
+            },
+            {
+                "fieldId": "spouseTwoPlaceOfMarriage"
+            },
+            {
+                "fieldId": "spouseTwoDateOfMarriage"
+            },
+            {
+                "fieldId": "spouseTwoTypeOfMarriage"
+            },
+            {
+                "fieldId": "spouseTwoMarriageCertificateNumber"
+            },
+            {
+                "fieldId": "spouses3"
+            },
+            {
+                "fieldId": "spouseThreeSurname"
+            },
+            {
+                "fieldId": "spouseThreeGivenName"
+            },
+            {
+                "fieldId": "spouseThreeOtherNames"
+            },
+            {
+                "fieldId": "spouseThreeMaidenName"
+            },
+            {
+                "fieldId": "spouseThreePreviousName"
+            },
+            {
+                "fieldId": "spouseThreeNIN"
+            },
+            {
+                "fieldId": "spouseThreeCitizenshipType"
+            },
+            {
+                "fieldId": "spouseThreePlaceOfMarriage"
+            },
+            {
+                "fieldId": "spouseThreeDateOfMarriage"
+            },
+            {
+                "fieldId": "spouseThreeTypeOfMarriage"
+            },
+            {
+                "fieldId": "spouseThreeMarriageCertificateNumber"
+            },
+            {
+                "fieldId": "declarant"
+            },
+            {
+                "fieldId": "declarantSurname"
+            },
+            {
+                "fieldId": "declarantgivenName"
+            },
+            {
+                "fieldId": "declarantotherNames"
+            },
+            {
+                "fieldId": "declarantPreviousNames"
+            },
+            {
+                "fieldId": "declarantMaidenName"
+            },
+            {
+                "fieldId": "declarantGender"
+            },
+            {
+                "fieldId": "declarantNationality"
+            },
+            {
+                "fieldId": "declarantResidenceStatus"
+            },
+            {
+                "fieldId": "introducerUIN"
+            }
+        ]
     },
     {
         "id": "UIN",
