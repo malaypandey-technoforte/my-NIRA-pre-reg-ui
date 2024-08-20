@@ -719,21 +719,21 @@ export class DemographicComponent extends FormDeactivateGuardService
           let identityJsonSpec =
             response[appConstants.RESPONSE]["jsonSpec"]["identity"];
           this.identityData = identityJsonSpec["identity"];
-          this.identityData = [];    //malay
-          // let locationHeirarchiesFromJson = [
-          //   ...identityJsonSpec["locationHierarchy"], //malay
-          // ];
+          //this.identityData = [];    //malay
+          let locationHeirarchiesFromJson = [
+            ...identityJsonSpec["locationHierarchy"], //malay
+          ];
           this.identitySchemaVersion =
             response[appConstants.RESPONSE]["idSchemaVersion"];
           //console.log(`identitySchemaVersion: ${this.identitySchemaVersion}`);
           //console.log(this.identityData);
 
           //malay
-          const fieldDefinitions = await this.loadFieldDefinitions();
-          this.identityData.push(...fieldDefinitions["identity"]);
-          let locationHeirarchiesFromJson = [
-            ...fieldDefinitions["locationHierarchy"],//malay
-          ];
+          // const fieldDefinitions = await this.loadFieldDefinitions();
+          // this.identityData.push(...fieldDefinitions["identity"]);
+          // let locationHeirarchiesFromJson = [
+          //   ...fieldDefinitions["locationHierarchy"],//malay
+          // ];
 
           if (Array.isArray(locationHeirarchiesFromJson[0])) {
             this.locationHeirarchies = locationHeirarchiesFromJson;
