@@ -17,7 +17,7 @@ on:
 
 jobs:
   build-pre-registration-ui:
-    uses: .github/workflows/npm-build.yml@dev2
+    uses: malaypandey-technoforte/my-NIRA-pre-reg-ui/.github/workflows/npm-build.yml@dev2
     with:
       SERVICE_LOCATION: pre-registration-ui
       BUILD_ARTIFACT: pre-registration-ui
