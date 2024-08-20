@@ -17,7 +17,7 @@ on:
 
 jobs:
   build-pre-registration-ui:
-    uses: .github/workflows/npm-build.yml
+    uses: .github/workflows/npm-build.yml@dev2
     with:
       SERVICE_LOCATION: pre-registration-ui
       BUILD_ARTIFACT: pre-registration-ui
