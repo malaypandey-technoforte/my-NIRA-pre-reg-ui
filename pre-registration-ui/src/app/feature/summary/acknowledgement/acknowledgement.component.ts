@@ -93,6 +93,7 @@ export class AcknowledgementComponent implements OnInit, OnDestroy {
     
 
     await this.apiCalls();
+    console.log("in ackw.component.ts in ngOnInit()")
     if (this.bookingService.getSendNotification()) {
       this.bookingService.resetSendNotification();
       await this.automaticNotification();
@@ -441,6 +442,7 @@ export class AcknowledgementComponent implements OnInit, OnDestroy {
   }
 
   automaticNotification() {
+    console.log("inside automaticNotification")
     setTimeout(() => {
       this.sendNotification(this.applicantContactDetails, false);
     }, 500);
@@ -506,6 +508,7 @@ export class AcknowledgementComponent implements OnInit, OnDestroy {
   // }
 
   sendAcknowledgement() {
+    console.log("in sendAcknowledgement")
     const data = {
       case: "SEND_ACKNOWLEDGEMENT",
       notificationTypes: this.notificationTypes,
@@ -555,6 +558,8 @@ export class AcknowledgementComponent implements OnInit, OnDestroy {
     //this.fileBlob = await this.createBlob();
     this.preRegIds.forEach(async preRegId => {
       let notificationObject = {};
+      console.log("contactInfoArr"+contactInfoArr)
+      console.log("usersInfoArr"+this.usersInfoArr)
       this.usersInfoArr.forEach(async (user) => {
         if (preRegId == user.preRegId) {
           let contactInfo = {};
@@ -566,12 +571,7 @@ export class AcknowledgementComponent implements OnInit, OnDestroy {
           notificationObject[user.langCode] = new NotificationDtoModel(
             user.fullName,
             user.preRegId,
-            user.bookingData
-              ? user.bookingData.split(",")[0]
-              : user.regDto.appointment_date,
-            Number(user.bookingTimePrimary.split(":")[0]) < 10
-              ? "0" + user.bookingTimePrimary
-              : user.bookingTimePrimary,
+            //malay
               contactInfo["phone"] === undefined ? null : contactInfo["phone"],
               contactInfo["email"] === undefined ? null : contactInfo["email"],
             additionalRecipient,
@@ -597,11 +597,13 @@ export class AcknowledgementComponent implements OnInit, OnDestroy {
       //   this.fileBlob,
       //   `${preRegId}.pdf`
       // );
+      console.log("in sendNotification")
       await this.sendNotificationForPreRegId(notificationRequest);
     }); 
   }
 
   private sendNotificationForPreRegId(notificationRequest) {
+    console.log("in sendNotificationForPreRegId"+JSON.stringify(notificationRequest))
     return new Promise((resolve, reject) => {
       this.subscriptions.push(
         this.dataStorageService

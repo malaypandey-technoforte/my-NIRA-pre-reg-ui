@@ -599,6 +599,7 @@ export class DemographicComponent extends FormDeactivateGuardService
       this.dataStorageService.getUser(preRegId).subscribe(
         (response) => {
           this.user.request = response[appConstants.RESPONSE];
+          console.log("demographic page status code::  " + this.user.request["statusCode"]);
           if (
             this.user.request["statusCode"] !==
             appConstants.APPLICATION_STATUS_CODES.incomplete &&
@@ -1144,7 +1145,7 @@ export class DemographicComponent extends FormDeactivateGuardService
       field = this.identityData.find(
         (field) => field.id === selectedFieldId);
     }
-    
+
 
     //Checking if the field has any "dependentFields".
     if (field && field.hasOwnProperty("dependentFields")) {
@@ -1252,7 +1253,7 @@ export class DemographicComponent extends FormDeactivateGuardService
             //facts[field.fieldId] = parentFieldValue;
           }
         }
-        console.log("for parent field:: "+JSON.stringify(subField.parentField))
+        console.log("for parent field:: " + JSON.stringify(subField.parentField))
         console.log(formIdentityData)
         const resetHiddenFieldFunc = this.resetHiddenField;
         let visibilityRule = new Rule({
@@ -2194,7 +2195,7 @@ export class DemographicComponent extends FormDeactivateGuardService
    * @memberof DemographicComponent
    */
   onSubmit() {
-    //console.log(this.stateCtrl.value);
+    console.log("this.stateCtrl.value");
     if (this.readOnlyMode) {
       this.redirectUser();
     } else {
@@ -2210,51 +2211,119 @@ export class DemographicComponent extends FormDeactivateGuardService
           }
         });
       });
+      console.log(this.userForm.valid)
 
       if (this.userForm.valid) {
-        const identity = this.createIdentityJSONDynamic(false);
-        const request = this.createRequestJSON(identity);
-        //console.log(request);
-        const responseJSON = this.createResponseJSON(identity);
-        //console.log(responseJSON);
-        this.dataUploadComplete = false;
-        if (this.dataModification) {
-          this.subscriptions.push(
-            this.dataStorageService
-              .updateUser(request, this.preRegId)
-              .subscribe(
-                (response) => {
-                  this.redirectUser();
-                },
-                (error) => {
-                  this.loggerService.error(JSON.stringify(error));
-                  const errCode = Utils.getErrorCode(error);
-                  if (errCode === appConstants.ERROR_CODES.invalidPin) {
-                    this.formValidation(error);
-                  }
-                  this.showErrorMessage(error);
-                }
-              )
-          );
-        } else {
-          this.subscriptions.push(
-            this.dataStorageService.addUser(request).subscribe(
-              (response) => {
-                this.preRegId =
-                  response[appConstants.RESPONSE].preRegistrationId;
-                this.redirectUser();
-              },
-              (error) => {
-                this.loggerService.error(JSON.stringify(error));
-                const errCode = Utils.getErrorCode(error);
-                if (errCode === appConstants.ERROR_CODES.invalidPin) {
-                  this.formValidation(error);
-                }
-                this.showErrorMessage(error);
+        //malay-popup
+        // open dialog for confirming 
+        const message = "This is a confirmation message to proceed with the entered user data.";
+        const ok_text = "OK";
+        const cancel_text = "CANCEL";
+        const body = {
+          case: "CONFIRMATION",
+          textDir: this.userPrefLanguageDir,
+          message: message,
+          yesButtonText: ok_text,
+          noButtonText: cancel_text,
+        };
+        this.dialog
+          .open(DialougComponent, { width: "400px", data: body })
+          .beforeClosed()
+          .subscribe((res) => {
+            if (res === true) {
+              const identity = this.createIdentityJSONDynamic(false);
+              const request = this.createRequestJSON(identity);
+              console.log(request);
+              const responseJSON = this.createResponseJSON(identity);
+              console.log("this.dataModification:: " + this.dataModification);
+              this.dataUploadComplete = false;
+              if (this.dataModification) {
+                this.subscriptions.push(
+                  this.dataStorageService
+                    .updateUser(request, this.preRegId)
+                    .subscribe(
+                      (response) => {
+                        this.redirectUser();
+                      },
+                      (error) => {
+                        this.loggerService.error(JSON.stringify(error));
+                        const errCode = Utils.getErrorCode(error);
+                        if (errCode === appConstants.ERROR_CODES.invalidPin) {
+                          this.formValidation(error);
+                        }
+                        this.showErrorMessage(error);
+                      }
+                    )
+                );
+              } else {
+                this.subscriptions.push(
+                  this.dataStorageService.addUser(request).subscribe(
+                    (response) => {
+                      this.preRegId =
+                        response[appConstants.RESPONSE].preRegistrationId;
+                      this.redirectUser();
+                    },
+                    (error) => {
+                      this.loggerService.error(JSON.stringify(error));
+                      const errCode = Utils.getErrorCode(error);
+                      if (errCode === appConstants.ERROR_CODES.invalidPin) {
+                        this.formValidation(error);
+                      }
+                      this.showErrorMessage(error);
+                    }
+                  )
+                );
               }
-            )
-          );
-        }
+
+            }
+            else {
+                  //else cancel is clicked can explicitly re-route to the same page or leave 
+                  //as it is. it will show the same page.
+            }
+          });
+        //   const identity = this.createIdentityJSONDynamic(false);
+        //   const request = this.createRequestJSON(identity);
+        //   console.log(request);
+        //   const responseJSON = this.createResponseJSON(identity);
+        //   console.log("this.dataModification:: " + this.dataModification);
+        //   this.dataUploadComplete = false;
+        //   if (this.dataModification) {
+        //     this.subscriptions.push(
+        //       this.dataStorageService
+        //         .updateUser(request, this.preRegId)
+        //         .subscribe(
+        //           (response) => {
+        //             this.redirectUser();
+        //           },
+        //           (error) => {
+        //             this.loggerService.error(JSON.stringify(error));
+        //             const errCode = Utils.getErrorCode(error);
+        //             if (errCode === appConstants.ERROR_CODES.invalidPin) {
+        //               this.formValidation(error);
+        //             }
+        //             this.showErrorMessage(error);
+        //           }
+        //         )
+        //     );
+        //   } else {
+        //     this.subscriptions.push(
+        //       this.dataStorageService.addUser(request).subscribe(
+        //         (response) => {
+        //           this.preRegId =
+        //             response[appConstants.RESPONSE].preRegistrationId;
+        //           this.redirectUser();
+        //         },
+        //         (error) => {
+        //           this.loggerService.error(JSON.stringify(error));
+        //           const errCode = Utils.getErrorCode(error);
+        //           if (errCode === appConstants.ERROR_CODES.invalidPin) {
+        //             this.formValidation(error);
+        //           }
+        //           this.showErrorMessage(error);
+        //         }
+        //       )
+        //     );
+        //   }
       }
     }
   }

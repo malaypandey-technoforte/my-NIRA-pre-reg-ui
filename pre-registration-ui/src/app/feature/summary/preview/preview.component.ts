@@ -15,6 +15,7 @@ import { DialougComponent } from "src/app/shared/dialoug/dialoug.component";
 import { RequestModel } from "src/app/shared/models/request-model/RequestModel";
 import { BookingModel } from "src/app/feature/booking/center-selection/booking.model";
 import identityStubJson from "../../../../assets/identity-spec.json";
+import { BookingService } from "../../booking/booking.service";
 
 @Component({
   selector: "app-preview",
@@ -63,6 +64,7 @@ export class PreviewComponent implements OnInit {
   isNavigateToDemographic = false;
   dataLoaded = false;
   constructor(
+    private bookingService: BookingService,
     public dialog: MatDialog,
     private dataStorageService: DataStorageService,
     private router: Router,
@@ -723,54 +725,12 @@ export class PreviewComponent implements OnInit {
   }
 
   navigateNext() {
-    //malay(status-issue)
-    this.makeBooking();
-
     //malay
-    // let url = Utils.getURL(this.router.url, "booking", 3);
-    // url = url + `/${this.preRegId}/pick-center`;
-    // this.router.navigateByUrl(url);
-    //malay
+    //this.bookingService.setSendNotification(true);
     let url = Utils.getURL(this.router.url, "summary", 3);
     // url = url + `/${this.preRegId}/pick-center`;
     url = url + `/${this.preRegId}/acknowledgement`;
     this.router.navigateByUrl(url);
   }
-  // navigateNext() {
-  //   let url = Utils.getURL(this.router.url, "summary", 3);
-  //   // url = url + `/${this.preRegId}/pick-center`;
-  //   url=url + `/${this.preRegId[0]}/acknowledgement`;
-  //   this.router.navigateByUrl(url);
-  // }
-
-  //malay
-  makeBooking() {
-    this.bookingDataList = [];
-    const bookingData = new BookingModel(
-      this.preRegId,
-      "10045",
-      "2024-09-18",
-      "11:15:00",
-      "11:30:00"
-    );
-    this.bookingDataList.push(bookingData);
-    this.bookingOperationRequest();
-  }
-  bookingOperationRequest() {
-    const obj = {
-      bookingRequest: this.bookingDataList,
-    };
-    const request = new RequestModel(appConstants.IDS.booking, obj);
-
-    this.bookingOperation(request);
-
-  }
-
-  bookingOperation(request) {
-    const subs = this.dataService.makeBooking(request).subscribe(
-      (response) => {
-      });
-    this.subscriptions.push(subs);
-  }
-
+  
 }

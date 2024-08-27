@@ -130,8 +130,10 @@ export class DataStorageService {
    */
   addUser(identity: any) {
     const obj = new RequestModel(appConstants.IDS.newUser, identity);
+    console.log("obj:: "+JSON.stringify(obj))
     let url =
       this.BASE_URL + this.PRE_REG_URL + appConstants.APPEND_URL.applicants;
+    console.log("calling url"+url)
     return this.httpClient.post(url, obj);
   }
 
@@ -142,7 +144,10 @@ export class DataStorageService {
       appConstants.APPEND_URL.applicants +
       appConstants.APPENDER +
       preRegId;
+    console.log("calling api::"+url)
     const obj = new RequestModel(appConstants.IDS.updateUser, identity);
+    console.log("obj"+obj);
+    console.log("calling api::"+url)
     return this.httpClient.put(url, obj);
   }
 
@@ -391,6 +396,9 @@ export class DataStorageService {
   }
 
   sendNotification(data: FormData) {
+    console.log("sendNotification called with the following url::"+
+      this.BASE_URL + this.PRE_REG_URL + appConstants.APPEND_URL.notification,
+      data)
     return this.httpClient.post(
       this.BASE_URL + this.PRE_REG_URL + appConstants.APPEND_URL.notification,
       data
